@@ -15,9 +15,7 @@
             <admin-header :class="[{'fixed-tabs': fixedTabs, 'fixed-header': fixedHeader, 'multi-page': multiPage}]" :style="headerStyle" :menuData="headMenuData" :collapsed="collapsed" @toggleCollapse="toggleCollapse" />
             <a-layout-header :class="['virtual-header', {'fixed-tabs' : fixedTabs, 'fixed-header': fixedHeader, 'multi-page': multiPage}]" v-show="fixedHeader"></a-layout-header>
             <a-layout-content class="admin-layout-content" :style="`min-height: ${minHeight}px;`">
-                <div style="position: relative">
-                    <slot></slot>
-                </div>
+                <slot></slot>
             </a-layout-content>
             <a-layout-footer style="padding: 0px">
                 <page-footer :link-list="footerLinks" :copyright="copyright" />
@@ -37,7 +35,7 @@ export default {
     components: { Setting, SideMenu, Drawer, PageFooter, AdminHeader },
     data () {
         return {
-            minHeight: window.innerHeight - 64 - 122,
+            minHeight: window.innerHeight - 64 - 100,
             collapsed: false,
             drawerOpen: false
         }
@@ -81,11 +79,11 @@ export default {
         }
     },
     created () {
-        this.correctPageMinHeight(this.minHeight - 24)
+        this.correctPageMinHeight(this.minHeight - 12)
         this.setActivated(this.$route)
     },
     beforeDestroy () {
-        this.correctPageMinHeight(-this.minHeight + 24)
+        this.correctPageMinHeight(-this.minHeight + 12)
     },
     methods: {
         ...mapMutations('setting', ['setSetting','correctPageMinHeight', 'setActivatedFirst']),
@@ -143,9 +141,7 @@ export default {
             }
         }
         .admin-layout-content {
-            padding: 12px 12px 0;
-            /*overflow-x: hidden;*/
-            /*min-height: calc(100vh - 64px - 122px);*/
+            padding: 0 12px 0;
         }
         .setting {
             background-color: @primary-color;

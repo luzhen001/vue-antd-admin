@@ -90,7 +90,7 @@ export default {
     }
 }
 </script>
-<style scoped lang="less">
+<style lang="less" scoped>
     .tab {
         margin: 0 -16px;
         padding: 0 16px;
@@ -102,7 +102,7 @@ export default {
             height: 100%;
         }
         .icon-close {
-            font-size: 12px;
+            font-size: 14px;
             margin-left: 6px;
             margin-right: -4px !important;
             color: @text-color-second;
@@ -130,8 +130,8 @@ export default {
         }
     }
     .tabs-container {
-        margin: -16px auto 8px;
         transition: top, left 0.2s;
+        padding:8px 0;
         .header-lock {
             font-size: 18px;
             cursor: pointer;
@@ -143,9 +143,8 @@ export default {
         &.affixed {
             margin: 0 auto;
             top: 0px;
-            padding: 8px 24px 0;
+            padding: 8px 12px 8px;
             position: fixed;
-            height: 48px;
             z-index: 1;
             background-color: @layout-body-background;
             &.side,
@@ -163,6 +162,7 @@ export default {
                     left: 0;
                     right: 0;
                     padding: 8px 24px 0;
+                    background: red;
                 }
             }
             &.fixed-header {
@@ -171,6 +171,6 @@ export default {
         }
     }
     .virtual-tabs {
-        height: 48px;
+        height: 56px;
     }
 </style>

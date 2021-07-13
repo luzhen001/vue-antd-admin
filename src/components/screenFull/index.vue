@@ -1,6 +1,6 @@
 <template>
     <div class="header-screen">
-        <a-icon @click="toggleScreen" class="action" :type="isFullScreen ? 'fullscreen-exit' : 'fullscreen'" />
+        <a-icon @click="toggleScreen" class="icon_18" :type="isFullScreen ? 'fullscreen-exit' : 'fullscreen'" />
     </div>
 </template>
 <script>

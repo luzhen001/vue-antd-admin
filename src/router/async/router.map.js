@@ -1,6 +1,6 @@
 // 视图组件
 const view = {
-    tabs: () => import('@/layouts/tabs'),
+    tabs: () => import('@/layouts/tabs/TabsView'),
     blank: () => import('@/layouts/BlankView')
 }
 // 路由组件注册

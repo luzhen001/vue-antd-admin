@@ -3,7 +3,7 @@
         <div :class="['admin-header-wide', layout, pageWidth]">
             <router-link v-if="isMobile || layout === 'head'" to="/" :class="['logo', isMobile ? null : 'pc', headerTheme]">
                 <img width="32" src="@/assets/images/logo.png" />
-                <h1>{{systemName}}</h1>
+                <!-- <h1 v-if="!isMobile">{{systemName}}</h1> -->
             </router-link>
             <div class="admin-header-left">
                 <a-icon v-if="layout !== 'head' && !isMobile" class="trigger" :type="collapsed ? 'menu-unfold' : 'menu-fold'" @click="toggleCollapse" />
@@ -140,12 +140,6 @@ export default {
                     padding: 0 12px;
                     cursor: pointer;
                     align-self: center;
-                    a {
-                        color: inherit;
-                    }
-                    .anticon {
-                        font-size: 18px;
-                    }
                 }
                 each(@theme-list, {
                             &.@{value} .header-item {

@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <a-icon type="setting" @click="setSetting(true)"/>
+    <div class="icon_wrap">
+        <a-icon type="setting" class="icon_18" @click="setSetting(true)"/>
     </div>
 </template>
 <script>

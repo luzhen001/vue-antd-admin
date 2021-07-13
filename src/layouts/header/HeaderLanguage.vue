@@ -1,7 +1,7 @@
 <template>
     <a-dropdown class="header-lang">
-        <div>
-            <a-icon type="global" />
+        <div class="icon_wrap">
+            <a-icon type="global" class="icon_18" />{{langAlias}}
         </div>
         <a-menu @click="val => setLang(val.key)" :selected-keys="[lang]" slot="overlay">
             <a-menu-item v-for="lang in langList" :key="lang.key">{{lang.key.toLowerCase() + ' ' + lang.name}}</a-menu-item>
@@ -23,9 +23,22 @@ export default {
     },
     computed:{
         ...mapState('setting', ['lang']),
+        langAlias() {
+        let lang = this.langList.find(item => item.key == this.lang)
+            return lang.alias
+        }
     },
     methods:{
         ...mapMutations('setting', ['setLang'])
     }
 }
 </script>
+<style lang="less" scoped>
+.icon_wrap{
+    display: flex;
+    align-items: center;
+    .anticon{
+        margin-right: 4px;
+    }
+}
+</style>

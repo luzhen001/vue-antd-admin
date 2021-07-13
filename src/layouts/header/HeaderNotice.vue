@@ -33,7 +33,7 @@
         </div>
         <div @click="fetchNotice" class="header-notice">
             <a-badge class="notice-badge" count="12">
-                <a-icon :class="['header-notice-icon']" type="bell" />
+                <a-icon :class="['header-notice-icon icon_18']" type="bell" />
             </a-badge>
         </div>
     </a-dropdown>

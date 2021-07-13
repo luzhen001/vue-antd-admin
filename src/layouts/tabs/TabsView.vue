@@ -2,7 +2,7 @@
     <admin-layout>
         <contextmenu :itemList="menuItemList" :visible.sync="menuVisible" @select="onMenuSelect" />
         <tabs-head v-if="multiPage" :active="activePage" :page-list="pageList" @change="changePage" @close="remove" @refresh="refresh" @contextmenu="onContextmenu" />
-        <div :class="['tabs-view-content', layout, pageWidth]" :style="`margin-top: ${multiPage ? -24 : 0}px`">
+        <div :class="['tabs-view-content', layout, pageWidth]" >
             <page-toggle-transition :disabled="animate.disabled" :animate="animate.name" :direction="animate.direction">
                 <a-keep-alive :exclude-keys="excludeKeys" v-if="multiPage && cachePage" v-model="clearCaches">
                     <router-view v-if="!refreshing" ref="tabContent" :key="$route.path" />
