@@ -220,11 +220,6 @@ const options = {
                             component: () => import('@/pages/components/TaskCard')
                         },
                         {
-                            path: 'palette',
-                            name: '颜色复选框',
-                            component: () => import('@/pages/components/Palette')
-                        },
-                        {
                             path: 'table',
                             name: '高级表格',
                             component: () => import('@/pages/components/table')
@@ -263,22 +258,6 @@ const options = {
                         }
                     },
                     component: () => import('@/pages/Demo')
-                },
-                {
-                    name: 'Ant Design Vue',
-                    path: 'antdv',
-                    meta: {
-                        icon: 'ant-design',
-                        link: 'https://www.antdv.com/docs/vue/introduce-cn/'
-                    }
-                },
-                {
-                    name: '使用文档',
-                    path: 'document',
-                    meta: {
-                        icon: 'file-word',
-                        link: 'https://iczer.gitee.io/vue-antd-admin-docs/'
-                    }
                 }
             ]
         }

@@ -1,15 +1,15 @@
 ## 使用
 ### clone
 ```bash
-$ git clone 
+$ git clone git@github.com:luzhen001/vue-antd-admin.git
 ```
 ### yarn
 ```bash
 $ yarn install
-$ yarn serve
+$ yarn dev
 ```
 ### or npm
 ```
 $ npm install
-$ npm run serve
+$ npm run dev
 ```

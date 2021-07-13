@@ -12,12 +12,12 @@ export default {
 </script>
 <style lang="less" scoped>
     .setting-item {
-        margin-bottom: 24px;
+        margin-bottom: 10px;
         .title {
-            font-size: 14px;
+            font-size: 16px;
             color: @title-color;
             line-height: 22px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
     }
 </style>

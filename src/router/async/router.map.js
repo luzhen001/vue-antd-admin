@@ -147,10 +147,6 @@ const routerMap = {
     taskCard: {
         name: '任务卡片',
         component: () => import('@/pages/components/TaskCard')
-    },
-    palette: {
-        name: '颜色复选框',
-        component: () => import('@/pages/components/Palette')
     }
 }
 export default routerMap

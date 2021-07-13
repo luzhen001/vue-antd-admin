@@ -1,15 +1,16 @@
 <template>
     <div class="header-screen">
-        <a-icon @click="toggleScreen" class="action" :type="isFullscreen ? 'fullscreen-exit' : 'fullscreen'" />
+        <a-icon @click="toggleScreen" class="action" :type="isFullScreen ? 'fullscreen-exit' : 'fullscreen'" />
     </div>
 </template>
 <script>
 import screenfull from 'screenfull'
+import {mapMutations} from 'vuex'
 export default {
     name: 'screenFull',
     data () {
         return {
-            isFullscreen: false
+            isFullScreen: false
         }
     },
     mounted () {
@@ -19,15 +20,17 @@ export default {
         this.destroyScreenFull();
     },
     methods: {
+        ...mapMutations('setting',['setFullScreen']),
         toggleScreen () {
             if (!screenfull.isEnabled) {
                 this.$message.warn('对不起，您的浏览器不支持全屏模式！');
                 return false;
             }
             screenfull.toggle();
+            this.setFullScreen(!this.isFullScreen)
         },
         changeScreenFull () {
-            this.isFullscreen = screenfull.isFullscreen;
+            this.isFullScreen = screenfull.isFullscreen;
         },
         initScreenFull () {
             if (screenfull.isEnabled) {

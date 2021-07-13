@@ -5,11 +5,20 @@
                 <img width="32" src="@/assets/images/logo.png" />
                 <h1>{{systemName}}</h1>
             </router-link>
-            <a-icon v-if="layout !== 'head' && !isMobile" class="trigger" :type="collapsed ? 'menu-unfold' : 'menu-fold'" @click="toggleCollapse" />
+            <div class="admin-header-left">
+                <a-icon v-if="layout !== 'head' && !isMobile" class="trigger" :type="collapsed ? 'menu-unfold' : 'menu-fold'" @click="toggleCollapse" />
+            </div>
             <header-breadcrumb v-if="!isMobile" class="admin-header-mid" />
             <div :class="['admin-header-right', headerTheme]">
-                <header-notice class="header-item" />
-                <screen-full class="header-item" />
+                <a-tooltip placement="bottom" title="通知">
+                    <header-notice class="header-item" />
+                </a-tooltip>
+                <a-tooltip placement="bottom" :title="isFullScreen ? '退出全屏' : '全屏'">
+                    <screen-full class="header-item" />
+                </a-tooltip>
+                <a-tooltip placement="bottom" title="设置">
+                    <header-setting class="header-item" />
+                </a-tooltip>
                 <header-language class="header-item" />
                 <header-avatar class="header-item" />
             </div>
@@ -17,31 +26,32 @@
     </a-layout-header>
 </template>
 <script>
-import HeaderNotice from './HeaderNotice'
-import HeaderAvatar from './HeaderAvatar'
-import HeaderLanguage from './HeaderLanguage'
 import HeaderBreadcrumb from './HeaderBreadcrumb'
+import HeaderNotice from './HeaderNotice'
 import ScreenFull from '@/components/screenFull'
+import HeaderSetting from './HeaderSetting'
+import HeaderLanguage from './HeaderLanguage'
+import HeaderAvatar from './HeaderAvatar'
 import { mapState } from 'vuex'
 export default {
     name: 'AdminHeader',
-    components: { HeaderBreadcrumb,ScreenFull,HeaderAvatar, HeaderNotice,HeaderLanguage },
+    components: { HeaderBreadcrumb, HeaderNotice, ScreenFull, HeaderSetting, HeaderLanguage, HeaderAvatar },
     props: ['collapsed'],
     data () {
         return {}
     },
     computed: {
-        ...mapState('setting', ['theme', 'isMobile', 'layout', 'systemName', 'pageWidth']),
+        ...mapState('setting', ['theme', 'isMobile', 'isFullScreen', 'layout', 'systemName', 'pageWidth']),
         headerTheme () {
             if (this.layout == 'side' && this.theme.mode == 'dark' && !this.isMobile) {
-                return 'light'
+                return 'dark';
             }
-            return this.theme.mode
+            return this.theme.mode;
         }
     },
     methods: {
         toggleCollapse () {
-            this.$emit('toggleCollapse')
+            this.$emit('toggleCollapse');
         }
     }
 }
@@ -60,8 +70,12 @@ export default {
             vertical-align: middle;
         }
         &.dark {
-            color: white;
-            background: @header-bg-color-dark;
+            color: @menu-dark-highlight-color;
+            background-color: @layout-trigger-background;
+        }
+        &.light {
+            color: #666;
+            background: @base-bg-color;
         }
         &.night {
             .head-menu {
@@ -69,6 +83,7 @@ export default {
             }
         }
         .admin-header-wide {
+            height: inherit;
             &.head.fixed {
                 max-width: 1400px;
                 margin: auto;
@@ -96,16 +111,23 @@ export default {
                     display: inline-block;
                 }
             }
-            .trigger {
-                font-size: 20px;
-                cursor: pointer;
-                transition: color 0.3s;
-                &:hover {
-                    color: @primary-color;
+            .admin-header-left {
+                height: inherit;
+                display: flex;
+                align-items: center;
+                .trigger {
+                    font-size: 20px;
+                    cursor: pointer;
+                    transition: color 0.3s;
+                    &:hover {
+                        color: @primary-color;
+                    }
                 }
             }
-            .admin-header-mid{
+            .admin-header-mid {
+                color: inherit;
                 flex: 1 1 auto;
+                opacity: 0.8;
                 margin-left: 30px;
             }
             .admin-header-right {
@@ -120,21 +142,21 @@ export default {
                     align-self: center;
                     a {
                         color: inherit;
-                        i {
-                            font-size: 18px;
-                        }
+                    }
+                    .anticon {
+                        font-size: 18px;
                     }
                 }
                 each(@theme-list, {
-                        &.@{value} .header-item {
-                            &:hover {
-                                @class: ~'hover-bg-color-@{value}';
-                                background-color: @@class;
+                            &.@{value} .header-item {
+                                &:hover {
+                                    @class: ~'hover-bg-color-@{value}';
+                                    background-color: @@class;
+                                }
                             }
                         }
-                    }
 
-                )
+                    );
             }
         }
     }

@@ -16,7 +16,8 @@ module.exports = {
     weekMode: false,                      //色弱模式，true:开启，false:不开启
     multiPage: true,                      //多页签模式，true:开启，false:不开启
     cachePage: true,                      //是否缓存页面数据，仅多页签模式下生效，true 缓存, false 不缓存
-    hideSetting: false,                   //隐藏设置抽屉，true:隐藏，false:不隐藏
+    isFullScreen: false,                  //是否全屏，true:是，false:不是
+    isShowSetting: false,                   //隐藏设置抽屉，true:隐藏，false:不隐藏
     systemName: '渠道商管理后台',          //系统名称
     copyright: '2021 Vue-Antd-Admin',     //copyright
     asyncRoutes: false,                   //异步加载路由，true:开启，false:不开启
@@ -29,7 +30,7 @@ module.exports = {
     },
     footerLinks: [                        //页面底部链接，{link: '链接地址', name: '名称/显示文字', icon: '图标，支持 ant design vue 图标库'}
         { link: 'https://pro.ant.design', name: 'Pro首页' },
-        { link: 'https://github.com/iczer/vue-antd-admin', icon: 'github' },
+        { link: 'https://github.com/luzhen001/vue-antd-admin', icon: 'github' },
         { link: 'https://ant.design', name: 'Ant Design' }
     ]
 }

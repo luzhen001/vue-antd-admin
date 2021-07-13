@@ -1,7 +1,7 @@
 <template>
     <a-breadcrumb>
         <a-breadcrumb-item :key="index" v-for="(item, index) in breadcrumb">
-            <span>{{item}}</span>
+            {{item}}
         </a-breadcrumb-item>
     </a-breadcrumb>
 </template>
@@ -56,3 +56,19 @@ export default {
     }
 }
 </script>
+<style lang="less" >
+.ant-breadcrumb>span{
+    opacity: .7;
+}
+.ant-breadcrumb>span:last-child{
+    opacity: 1;
+}
+.dark{
+    .ant-breadcrumb-separator{
+        color: inherit;
+    }
+    .ant-breadcrumb>span:last-child{
+        color: inherit;
+    }
+}
+</style>

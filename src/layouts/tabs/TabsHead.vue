@@ -90,7 +90,6 @@ export default {
     }
 }
 </script>
-
 <style scoped lang="less">
     .tab {
         margin: 0 -16px;

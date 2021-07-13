@@ -5,9 +5,9 @@
         </drawer>
         <side-menu :class="[fixedSideBar ? 'fixed-side' : '']" :theme="theme.mode" v-else-if="layout === 'side' || layout === 'mix'" :menuData="sideMenuData" :collapsed="collapsed" :collapsible="true" />
         <div v-if="fixedSideBar && !isMobile" :style="`width: ${sideMenuWidth}; min-width: ${sideMenuWidth};max-width: ${sideMenuWidth};`" class="virtual-side"></div>
-        <drawer v-if="!hideSetting" v-model="showSetting" placement="right">
-            <div class="setting" slot="handler">
-                <a-icon :type="showSetting ? 'close' : 'setting'" />
+        <drawer :visible="isShowSetting" placement="right">
+            <div slot="handler">
+                <a-icon v-show="isShowSetting" class="setting" type="close" @click="setSetting(false)" />
             </div>
             <setting />
         </drawer>
@@ -32,7 +32,6 @@ import Drawer from '../components/tool/Drawer'
 import SideMenu from '../components/menu/SideMenu'
 import Setting from '../components/setting/Setting'
 import { mapState, mapMutations, mapGetters } from 'vuex'
-// const minHeight = window.innerHeight - 64 - 122
 export default {
     name: 'AdminLayout',
     components: { Setting, SideMenu, Drawer, PageFooter, AdminHeader },
@@ -40,7 +39,6 @@ export default {
         return {
             minHeight: window.innerHeight - 64 - 122,
             collapsed: false,
-            showSetting: false,
             drawerOpen: false
         }
     },
@@ -63,8 +61,7 @@ export default {
         }
     },
     computed: {
-        ...mapState('setting', ['isMobile', 'theme', 'layout', 'footerLinks', 'copyright', 'fixedHeader', 'fixedSideBar',
-            'fixedTabs', 'hideSetting', 'multiPage']),
+        ...mapState('setting', ['isMobile', 'theme', 'layout', 'footerLinks', 'copyright', 'fixedHeader', 'fixedSideBar', 'fixedTabs', 'isShowSetting', 'multiPage']),
         ...mapGetters('setting', ['firstMenu', 'subMenu', 'menuData']),
         sideMenuWidth () {
             return this.collapsed ? '80px' : '256px'
@@ -83,8 +80,15 @@ export default {
             return layout === 'mix' ? subMenu : menuData
         }
     },
+    created () {
+        this.correctPageMinHeight(this.minHeight - 24)
+        this.setActivated(this.$route)
+    },
+    beforeDestroy () {
+        this.correctPageMinHeight(-this.minHeight + 24)
+    },
     methods: {
-        ...mapMutations('setting', ['correctPageMinHeight', 'setActivatedFirst']),
+        ...mapMutations('setting', ['setSetting','correctPageMinHeight', 'setActivatedFirst']),
         toggleCollapse () {
             this.collapsed = !this.collapsed
         },
@@ -104,13 +108,6 @@ export default {
                 }
             }
         }
-    },
-    created () {
-        this.correctPageMinHeight(this.minHeight - 24)
-        this.setActivated(this.$route)
-    },
-    beforeDestroy () {
-        this.correctPageMinHeight(-this.minHeight + 24)
     }
 }
 </script>
@@ -147,7 +144,6 @@ export default {
         }
         .admin-layout-content {
             padding: 12px 12px 0;
-            border:1px solid red;
             /*overflow-x: hidden;*/
             /*min-height: calc(100vh - 64px - 122px);*/
         }

@@ -76,8 +76,13 @@ export default {
         setLang (state, lang) {
             state.lang = lang
         },
-        setHideSetting (state, hideSetting) {
-            state.hideSetting = hideSetting
+        //全局设置是否显示隐藏
+        setSetting (state, isShowSetting) {
+            state.isShowSetting = isShowSetting;
+        },
+        //是否全屏
+        setFullScreen(state,isFullScreen){
+            state.isFullScreen = isFullScreen;
         },
         correctPageMinHeight (state, minHeight) {
             state.pageMinHeight += minHeight
