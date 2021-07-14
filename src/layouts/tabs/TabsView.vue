@@ -13,13 +13,13 @@
     </admin-layout>
 </template>
 <script>
+import TabsHead from './TabsHead'
 import AdminLayout from '@/layouts/AdminLayout'
 import Contextmenu from '@/components/menu/Contextmenu'
 import PageToggleTransition from '@/components/transition/PageToggleTransition'
 import { mapState, mapMutations } from 'vuex'
 import { getI18nKey } from '@/utils/routerUtil'
 import AKeepAlive from '@/components/cache/AKeepAlive'
-import TabsHead from './TabsHead'
 export default {
     name: 'TabsView',
     i18n: require('./i18n'),

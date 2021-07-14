@@ -3,7 +3,6 @@
         <div :class="['admin-header-wide', layout, pageWidth]">
             <router-link v-if="isMobile || layout === 'head'" to="/" :class="['logo', isMobile ? null : 'pc', headerTheme]">
                 <img width="32" src="@/assets/images/logo.png" />
-                <!-- <h1 v-if="!isMobile">{{systemName}}</h1> -->
             </router-link>
             <div class="admin-header-left">
                 <a-icon v-if="layout !== 'head' && !isMobile" class="trigger" :type="collapsed ? 'menu-unfold' : 'menu-fold'" @click="toggleCollapse" />
@@ -28,7 +27,7 @@
 <script>
 import HeaderBreadcrumb from './HeaderBreadcrumb'
 import HeaderNotice from './HeaderNotice'
-import ScreenFull from '@/components/screenFull'
+import ScreenFull from '@/components/screen/ScreenFull'
 import HeaderSetting from './HeaderSetting'
 import HeaderLanguage from './HeaderLanguage'
 import HeaderAvatar from './HeaderAvatar'
@@ -131,15 +130,17 @@ export default {
                 margin-left: 30px;
             }
             .admin-header-right {
+                height: 100%;
                 float: right;
                 display: flex;
                 color: inherit;
                 .header-item {
-                    height: 100%;
+                    height: inherit;
                     color: inherit;
                     padding: 0 12px;
                     cursor: pointer;
-                    align-self: center;
+                    display: flex;
+                    align-items: center;
                 }
                 each(@theme-list, {
                             &.@{value} .header-item {

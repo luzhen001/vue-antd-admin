@@ -21,14 +21,12 @@
         </div>
     </a-card>
 </template>
-
 <script>
 export default {
     name: 'ChartCard',
     props: ['title', 'total', 'loading']
 }
 </script>
-
 <style scoped lang="less">
     .chart-card-header {
         position: relative;

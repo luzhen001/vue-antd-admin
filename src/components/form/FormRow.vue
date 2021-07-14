@@ -8,14 +8,12 @@
         </div>
     </div>
 </template>
-
 <script>
 export default {
     name: 'FormRow',
     props: ['label']
 }
 </script>
-
 <style lang="less" scoped>
     .form-row {
         display: flex;

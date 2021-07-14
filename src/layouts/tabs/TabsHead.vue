@@ -43,7 +43,7 @@ export default {
     },
     data () {
         return {
-            affixed: false,
+            affixed: false
         }
     },
     inject: ['adminLayout'],
@@ -59,33 +59,33 @@ export default {
     methods: {
         ...mapMutations('setting', ['setFixedTabs']),
         onLockClick () {
-            this.setFixedTabs(!this.fixedTabs)
+            this.setFixedTabs(!this.fixedTabs);
             if (this.fixedTabs) {
                 setTimeout(() => {
-                    this.affixed = true
-                }, 200)
+                    this.affixed = true;
+                }, 200);
             } else {
-                this.affixed = false
+                this.affixed = false;
             }
         },
         onTabClick (key) {
             if (this.active !== key) {
-                this.$emit('change', key)
+                this.$emit('change', key);
             }
         },
         onClose (key) {
-            this.$emit('close', key)
+            this.$emit('close', key);
         },
         onRefresh (page) {
-            this.$emit('refresh', page.path, page)
+            this.$emit('refresh', page.path, page);
         },
         onContextmenu (pageKey, e) {
-            this.$emit('contextmenu', pageKey, e)
+            this.$emit('contextmenu', pageKey, e);
         },
         pageName (page) {
-            const pagePath = page.fullPath.split('?')[0]
-            const custom = this.customTitles.find(item => item.path === pagePath)
-            return (custom && custom.title) || page.title || this.$t(getI18nKey(page.keyPath))
+            const pagePath = page.fullPath.split('?')[0];
+            const custom = this.customTitles.find(item => item.path === pagePath);
+            return (custom && custom.title) || page.title || this.$t(getI18nKey(page.keyPath));
         }
     }
 }
@@ -98,8 +98,8 @@ export default {
         user-select: none;
         transition: all 0.2s;
         .title {
-            display: inline-block;
             height: 100%;
+            display: inline-block;
         }
         .icon-close {
             font-size: 14px;
@@ -130,8 +130,8 @@ export default {
         }
     }
     .tabs-container {
+        padding: 8px 0;
         transition: top, left 0.2s;
-        padding:8px 0;
         .header-lock {
             font-size: 18px;
             cursor: pointer;
@@ -162,7 +162,6 @@ export default {
                     left: 0;
                     right: 0;
                     padding: 8px 24px 0;
-                    background: red;
                 }
             }
             &.fixed-header {

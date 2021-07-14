@@ -1,26 +1,38 @@
 <template>
-    <div class="result">
-        <div>
-            <a-icon :class="[isSuccess ? 'success' : 'error' ,'icon']" :type="isSuccess ? 'check-circle' : 'close-circle'" />
+    <div class="result_wrap">
+        <div class="result_icon">
+            <a-icon :class="['icon',iconName]" :type="iconType" />
         </div>
         <div class="title" v-if="title">{{title}}</div>
         <div class="desc" v-if="description">{{description}}</div>
         <div class="content">
-            <slot></slot>
-        </div>
-        <div class="action">
-            <slot name="action"></slot>
+            <slot name="content"></slot>
         </div>
     </div>
 </template>
 <script>
 export default {
     name: 'Result',
-    props: ['isSuccess', 'title', 'description']
+    props:{
+        iconName:{
+            type:String,
+            default:'success'
+        },
+        iconType:{
+            type:String,
+            default:'check-circle'
+        },
+        title:{
+            type:String
+        },
+        description:{
+            type:String
+        }
+    }
 }
 </script>
 <style lang="less" scoped>
-    .result {
+    .result_wrap {
         text-align: center;
         width: 72%;
         margin: 0 auto;
@@ -49,13 +61,10 @@ export default {
             margin-bottom: 24px;
         }
         .content {
-            background-color: @background-color-light;
             padding: 24px 40px;
             border-radius: 2px;
             text-align: left;
-        }
-        .action {
-            margin-top: 32px;
+            background-color: @background-color-light;
         }
     }
 </style>

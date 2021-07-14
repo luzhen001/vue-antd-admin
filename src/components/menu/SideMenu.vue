@@ -59,13 +59,12 @@ export default {
         z-index: 10;
         .logo {
             height: 64px;
+            line-height: 64px;
+            padding-left: 24px;
             position: relative;
             -webkit-transition: all .3s;
             transition: all .3s;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background-color: @layout-trigger-background;
             &.light {
                 background-color: #fff;
@@ -86,7 +85,7 @@ export default {
             }
         }
     }
-    .menu {
-        padding: 16px 0;
+    .menu{
+        padding: 0;
     }
 </style>

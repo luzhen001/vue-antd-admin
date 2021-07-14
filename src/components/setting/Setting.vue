@@ -115,8 +115,11 @@ export default {
         saveSetting () {
             const closeMessage = this.$message.loading('正在保存到本地，请稍后...', 0)
             const config = this.extractConfig(true)
+            if(config.isShowSetting){
+                config.isShowSetting = false;
+            }
             localStorage.setItem(process.env.VUE_APP_SETTING_KEY, JSON.stringify(config))
-            setTimeout(closeMessage, 800)
+            setTimeout(closeMessage, 1500)
         },
         resetSetting () {
             this.$confirm({
@@ -129,13 +132,14 @@ export default {
         },
         //提取配置
         extractConfig (local = false) {
-            let config = {}
-            let mySetting = this.$store.state.setting
-            let dftSetting = local ? deepMerge(setting, sysConfig) : setting
+            let config = {};
+            let mySetting = this.$store.state.setting;
+            let dftSetting = local ? deepMerge(setting, sysConfig) : setting;
             Object.keys(mySetting).forEach(key => {
-                const dftValue = dftSetting[key], myValue = mySetting[key]
+                const dftValue = dftSetting[key];
+                const myValue = mySetting[key];
                 if (dftValue != undefined && !fastEqual(dftValue, myValue)) {
-                    config[key] = myValue
+                    config[key] = myValue;
                 }
             })
             return config
@@ -148,12 +152,11 @@ export default {
 <style lang="less" scoped>
     .side-setting {
         min-height: 100%;
-        background-color: @base-bg-color;
         padding: 24px;
         font-size: 14px;
         line-height: 1.5;
         word-wrap: break-word;
-        position: relative;
+        background-color: @base-bg-color;
         .flex {
             display: flex;
         }

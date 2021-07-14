@@ -51,10 +51,10 @@ export default {
             this.$emit('update:visible', false)
         },
         setPosition (e) {
-            this.left = e.clientX
-            this.top = e.clientY
-            this.target = e.target
-            this.meta = e.meta
+            this.left = e.clientX;
+            this.top = e.clientY;
+            this.target = e.target;
+            this.meta = e.meta;
         },
         handleClick ({ key }) {
             this.$emit('select', key, this.target, this.meta)
