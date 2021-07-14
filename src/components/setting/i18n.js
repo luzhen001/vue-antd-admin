@@ -3,16 +3,12 @@ module.exports = {
         CN: {
             theme: {
                 title: '整体风格设置',
-                light: '亮色菜单风格',
-                dark: '暗色菜单风格',
+                light: '亮色模式',
+                dark: '暗色模式',
                 night: '深夜模式',
                 color: '主题色'
             },
             navigate: {
-                title: '导航设置',
-                side: '侧边导航',
-                head: '顶部导航',
-                mix: '混合导航',
                 layout:'布局设置',
                 content: {
                     title: '内容区域宽度',
@@ -39,15 +35,12 @@ module.exports = {
         HK: {
             theme: {
                 title: '整體風格設置',
-                light: '亮色菜單風格',
-                dark: '暗色菜單風格',
+                light: '亮色模式',
+                dark: '暗色模式',
                 night: '深夜模式',
                 color: '主題色'
             },
             navigate: {
-                title: '導航設置',
-                side: '側邊導航',
-                head: '頂部導航',
                 layout:'布局設置',
                 content: {
                     title: '內容區域寬度',
@@ -80,10 +73,6 @@ module.exports = {
                 color: 'Theme Color'
             },
             navigate: {
-                title: 'Navigation Mode',
-                side: 'Side Menu Layout',
-                head: 'Top Menu Layout',
-                mix: 'Mix Menu Layout',
                 layout:'Layout Setting',
                 content: {
                     title: 'Content Width',

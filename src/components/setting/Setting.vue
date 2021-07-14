@@ -2,9 +2,9 @@
     <div class="side-setting">
         <setting-item :title="$t('theme.title')" class="set_item">
             <img-checkbox-group @change="values => setTheme({...theme, mode: values[0]})" :default-values="[theme.mode]">
-                <img-checkbox :title="$t('theme.dark')" img="https://gw.alipayobjects.com/zos/rmsportal/LCkqqYNmvBEbokSDscrm.svg" value="dark" />
-                <img-checkbox :title="$t('theme.light')" img="https://gw.alipayobjects.com/zos/rmsportal/jpRkZQMyYRryryPNtyIC.svg" value="light" />
-                <img-checkbox :title="$t('theme.night')" img="https://gw.alipayobjects.com/zos/antfincdn/hmKaLQvmY2/LCkqqYNmvBEbokSDscrm.svg" value="night" />
+                <img-checkbox :title="$t('theme.dark')" :img="darkStyle" value="dark" />
+                <img-checkbox :title="$t('theme.light')" :img="lightStyle" value="light" />
+                <img-checkbox :title="$t('theme.night')" :img="nightStyle" value="night" />
             </img-checkbox-group>
         </setting-item>
         <a-divider />
@@ -14,13 +14,6 @@
             </color-checkbox-group>
         </setting-item>
         <a-divider />
-        <!-- <setting-item :title="$t('navigate.title')">
-            <img-checkbox-group @change="values => setLayout(values[0])" :default-values="[layout]">
-                <img-checkbox :title="$t('navigate.side')" img="https://gw.alipayobjects.com/zos/rmsportal/JopDzEhOqwOjeNTXkoje.svg" value="side" />
-                <img-checkbox :title="$t('navigate.head')" img="https://gw.alipayobjects.com/zos/rmsportal/KDNDBbriJhLwuqMoxcAr.svg" value="head" />
-                <img-checkbox :title="$t('navigate.mix')" img="https://gw.alipayobjects.com/zos/antfincdn/x8Ob%26B8cy8/LCkqqYNmvBEbokSDscrm.svg" value="mix" />
-            </img-checkbox-group>
-        </setting-item> -->
         <setting-item :title="$t('navigate.layout')">
             <a-list :split="false">
                 <a-list-item>
@@ -88,6 +81,9 @@ import { setting } from '@/config/default'
 import sysConfig from '@/config/config'
 import fastEqual from 'fast-deep-equal'
 import deepMerge from 'deepmerge'
+import darkStyle from '@/assets/images/set_dark_style.svg'
+import lightStyle from '@/assets/images/set_light_style.svg'
+import nightStyle from '@/assets/images/set_night_style.svg'
 const ColorCheckboxGroup = ColorCheckbox.Group
 const ImgCheckboxGroup = ImgCheckbox.Group
 export default {
@@ -95,7 +91,11 @@ export default {
     i18n: require('./i18n'),
     components: { ImgCheckboxGroup, ImgCheckbox, ColorCheckboxGroup, ColorCheckbox, SettingItem },
     data () {
-        return {}
+        return {
+            darkStyle,
+            lightStyle,
+            nightStyle
+        }
     },
     computed: {
         directions () {
@@ -110,23 +110,31 @@ export default {
     },
     methods: {
         getPopupContainer () {
-            return this.$el.parentNode
+            return this.$el.parentNode;
         },
         saveSetting () {
-            const closeMessage = this.$message.loading('正在保存到本地，请稍后...', 0)
-            const config = this.extractConfig(true)
+            this.$message.destroy();
+            const closeMessage = this.$message.loading('正在保存到本地，请稍后...', 0);
+            const config = this.extractConfig(true);
             if(config.isShowSetting){
                 config.isShowSetting = false;
             }
-            localStorage.setItem(process.env.VUE_APP_SETTING_KEY, JSON.stringify(config))
-            setTimeout(closeMessage, 1500)
+            localStorage.setItem(process.env.VUE_APP_SETTING_KEY, JSON.stringify(config));
+            setTimeout(closeMessage, 1500);
+            setTimeout(() => {
+                this.setSetting(false);
+            }, 1000);
         },
         resetSetting () {
             this.$confirm({
                 title: '重置主题会刷新页面，当前页面内容不会保留，确认重置？',
+                centered:true,
                 onOk () {
-                    localStorage.removeItem(process.env.VUE_APP_SETTING_KEY)
-                    window.location.reload()
+                    localStorage.removeItem(process.env.VUE_APP_SETTING_KEY);
+                    window.location.reload();
+                    setTimeout(() => {
+                        this.setSetting(false);
+                    }, 1000);
                 }
             })
         },
@@ -144,8 +152,7 @@ export default {
             })
             return config
         },
-        ...mapMutations('setting', ['setTheme', 'setLayout', 'setMultiPage', 'setWeekMode',
-            'setFixedSideBar', 'setFixedHeader', 'setAnimate', 'setPageWidth'])
+        ...mapMutations('setting', ['setTheme', 'setMultiPage', 'setWeekMode','setFixedSideBar', 'setFixedHeader', 'setAnimate', 'setSetting', 'setPageWidth'])
     }
 }
 </script>
