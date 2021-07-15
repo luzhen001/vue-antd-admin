@@ -8,9 +8,10 @@ module.exports = {
         warning: '#faad14',               //警告色
         error: '#f5222f',                 //错误色
     },
-    layout: 'side',                       //导航布局，可选 side 和 head，分别为侧边导航和顶部导航
+    layout: 'side',                       //导航布局，side
     fixedHeader: true,                    //固定头部状态栏，true:固定，false:不固定
     fixedSideBar: true,                   //固定侧边栏，true:固定，false:不固定
+    showSideBar: true,                    //显示侧边栏，true:显示，false:不显示
     fixedTabs: true,                      //固定页签头，true:固定，false:不固定
     pageWidth: 'fixed',                   //内容区域宽度，fixed:固定宽度，fluid:流式宽度
     weekMode: false,                      //色弱模式，true:开启，false:不开启

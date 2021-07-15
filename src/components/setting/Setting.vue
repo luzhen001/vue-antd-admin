@@ -25,33 +25,27 @@
                 </a-list-item>
                 <a-list-item>
                     {{$t('navigate.fixedHeader')}}
-                    <a-switch :checked="fixedHeader" slot="actions" size="small" @change="setFixedHeader" />
+                    <a-switch :checked="fixedHeader" slot="actions" @change="setFixedHeader" />
+                </a-list-item>
+                <a-list-item>
+                    {{$t('navigate.showSidebar')}}
+                    <a-switch :checked="showSideBar" slot="actions" @change="setShowSideBar" />
                 </a-list-item>
                 <a-list-item>
                     {{$t('navigate.fixedSideBar')}}
-                    <a-switch :checked="fixedSideBar" slot="actions" size="small" @change="setFixedSideBar" />
-                </a-list-item>
-            </a-list>
-        </setting-item>
-        <a-divider />
-        <setting-item :title="$t('other.title')">
-            <a-list :split="false">
-                <a-list-item>
-                    {{$t('other.weekMode')}}
-                    <a-switch :checked="weekMode" slot="actions" size="small" @change="setWeekMode" />
+                    <a-switch :checked="fixedSideBar" slot="actions" @change="setFixedSideBar" />
                 </a-list-item>
                 <a-list-item>
                     {{$t('other.multiPages')}}
-                    <a-switch :checked="multiPage" slot="actions" size="small" @change="setMultiPage" />
+                    <a-switch :checked="multiPage" slot="actions" @change="setMultiPage" />
                 </a-list-item>
             </a-list>
         </setting-item>
-        <a-divider />
-        <setting-item :title="$t('animate.title')">
+        <a-divider />  <setting-item :title="$t('animate.title')">
             <a-list :split="false">
                 <a-list-item>
                     {{$t('animate.disable')}}
-                    <a-switch :checked="animate.disabled" slot="actions" size="small" @change="val => setAnimate({...animate, disabled: val})" />
+                    <a-switch :checked="animate.disabled" slot="actions" @change="val => setAnimate({...animate, disabled: val})" />
                 </a-list-item>
                 <a-list-item>
                     {{$t('animate.effect')}}
@@ -65,6 +59,16 @@
                         <a-select-option :key="index" :value="item" v-for="(item, index) in directions">{{item}}</a-select-option>
                     </a-select>
                 </a-list-item>
+            </a-list>
+        </setting-item>
+        <a-divider />
+        <setting-item :title="$t('other.title')">
+            <a-list :split="false">
+                <a-list-item>
+                    {{$t('other.weekMode')}}
+                    <a-switch :checked="weekMode" slot="actions" @change="setWeekMode" />
+                </a-list-item>
+                
             </a-list>
         </setting-item>
         <setting-item class="set_item">
@@ -101,7 +105,19 @@ export default {
         directions () {
             return this.animates.find(item => item.name == this.animate.name).directions
         },
-        ...mapState('setting', ['theme', 'layout', 'animate', 'animates', 'palettes', 'multiPage', 'weekMode', 'fixedHeader', 'fixedSideBar', 'pageWidth'])
+        ...mapState('setting', [
+            'theme',
+            'layout',
+            'animate',
+            'animates',
+            'palettes',
+            'multiPage',
+            'weekMode',
+            'fixedHeader',
+            'showSideBar',
+            'fixedSideBar',
+            'pageWidth'
+        ])
     },
     watch: {
         'animate.name': function (val) {
@@ -109,6 +125,17 @@ export default {
         }
     },
     methods: {
+        ...mapMutations('setting', [
+            'setTheme',
+            'setMultiPage',
+            'setWeekMode',
+            'setFixedSideBar',
+            'setShowSideBar',
+            'setFixedHeader',
+            'setAnimate',
+            'setSetting',
+            'setPageWidth'
+        ]),
         getPopupContainer () {
             return this.$el.parentNode;
         },
@@ -151,8 +178,7 @@ export default {
                 }
             })
             return config
-        },
-        ...mapMutations('setting', ['setTheme', 'setMultiPage', 'setWeekMode','setFixedSideBar', 'setFixedHeader', 'setAnimate', 'setSetting', 'setPageWidth'])
+        }
     }
 }
 </script>

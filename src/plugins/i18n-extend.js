@@ -3,7 +3,6 @@ const MODE = {
     STATEMENTS: 's', //语句模式
     PHRASAL: 'p', //词组模式
 }
-
 const VueI18nPlugin = {
     install: function (Vue) {
         Vue.mixin({

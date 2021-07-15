@@ -73,8 +73,13 @@ export default {
         setFixedSideBar (state, fixedSideBar) {
             state.fixedSideBar = fixedSideBar
         },
+        //是否显示侧栏
+        setShowSideBar(state,showSideBar){
+            state.showSideBar = showSideBar;
+        },
+        //设置语言
         setLang (state, lang) {
-            state.lang = lang
+            state.lang = lang;
         },
         //全局设置是否显示隐藏
         setSetting (state, isShowSetting) {

@@ -16,7 +16,8 @@ module.exports = {
                     fixed: '定宽'
                 },
                 fixedHeader: '固定Header',
-                fixedSideBar: '固定侧边栏',
+                showSidebar: '显示侧边栏',
+                fixedSideBar: '固定侧边栏'
             },
             other: {
                 title: '其他设置',
@@ -48,6 +49,7 @@ module.exports = {
                     fixed: '定寬'
                 },
                 fixedHeader: '固定Header',
+                showSidebar: '显示側邊欄',
                 fixedSideBar: '固定側邊欄',
             },
             other: {
@@ -80,6 +82,7 @@ module.exports = {
                     fixed: 'Fixed'
                 },
                 fixedHeader: 'Fixed Header',
+                showSidebar: 'Show SideBar',
                 fixedSideBar: 'Fixed SideBar',
             },
             other: {

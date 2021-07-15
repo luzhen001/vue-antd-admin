@@ -1,6 +1,6 @@
 <template>
     <div :class="['tabs-head', layout, pageWidth]">
-        <a-tabs type="editable-card" :class="['tabs-container', layout, pageWidth, {'affixed' : affixed, 'fixed-header' : fixedHeader, 'collapsed' : adminLayout.collapsed}]" :active-key="active" :hide-add="true">
+        <a-tabs type="editable-card" :class="['tabs-container', layout, pageWidth, {'affixed' : affixed, 'fixed-header' : fixedHeader, 'collapsed' : adminLayout.collapsed,'no-sidebar':!adminLayout.showSideBar,'mulpage-mobile':adminLayout.isMobile}]" :active-key="active" :hide-add="true">
             <a-tooltip placement="left" :title="lockTitle" slot="tabBarExtraContent">
                 <a-icon theme="filled" @click="onLockClick" class="header-lock" :type="fixedTabs ? 'lock' : 'unlock'" />
             </a-tooltip>
@@ -48,6 +48,7 @@ export default {
     },
     inject: ['adminLayout'],
     created () {
+        console.log(this.adminLayout);
         this.affixed = this.fixedTabs
     },
     computed: {
@@ -153,6 +154,12 @@ export default {
                 left: 256px;
                 &.collapsed {
                     left: 80px;
+                }
+                &.no-sidebar{
+                    left: 0;
+                }
+                &.mulpage-mobile{
+                    left: 0;
                 }
             }
             &.head {

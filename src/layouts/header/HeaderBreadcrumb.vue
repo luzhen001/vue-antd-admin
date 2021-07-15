@@ -1,14 +1,12 @@
 <template>
     <a-breadcrumb>
-        <a-breadcrumb-item :key="index" v-for="(item, index) in breadcrumb">
-            {{item}}
-        </a-breadcrumb-item>
+        <a-breadcrumb-item :key="index" v-for="(item, index) in breadcrumb">{{item}}</a-breadcrumb-item>
     </a-breadcrumb>
 </template>
 <script>
 import { getI18nKey } from '@/utils/routerUtil'
 export default {
-    name:'HeaderBreadcrumb',
+    name: 'HeaderBreadcrumb',
     data () {
         return {
             page: {}
@@ -22,7 +20,7 @@ export default {
     created () {
         this.page = this.$route.meta.page
     },
-    computed:{
+    computed: {
         breadcrumb () {
             let page = this.page
             let breadcrumb = page && page.breadcrumb
@@ -37,7 +35,7 @@ export default {
             }
         }
     },
-    methods:{
+    methods: {
         getRouteBreadcrumb () {
             let routes = this.$route.matched
             const path = this.$route.path
@@ -57,18 +55,21 @@ export default {
 }
 </script>
 <style lang="less" >
-.ant-breadcrumb>span{
-    opacity: .7;
-}
-.ant-breadcrumb>span:last-child{
-    opacity: 1;
-}
-.dark{
+    .ant-breadcrumb > span {
+        opacity: 0.6;
+    }
+    .ant-breadcrumb > span:last-child {
+        opacity: 1;
+    }
     .ant-breadcrumb-separator{
-        color: inherit;
+        margin: 0 4px;
     }
-    .ant-breadcrumb>span:last-child{
-        color: inherit;
+    .dark {
+        .ant-breadcrumb-separator {
+            color: inherit;
+        }
+        .ant-breadcrumb > span:last-child {
+            color: inherit;
+        }
     }
-}
 </style>

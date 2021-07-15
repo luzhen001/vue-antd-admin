@@ -9,7 +9,7 @@
             </div>
             <header-breadcrumb v-if="!isMobile" class="admin-header-mid" />
             <div :class="['admin-header-right', headerTheme]">
-                <a-tooltip placement="bottom" title="通知">
+                <a-tooltip placement="bottom" title="消息">
                     <header-notice class="header-item" />
                 </a-tooltip>
                 <a-tooltip placement="bottom" :title="isFullScreen ? '退出全屏' : '全屏'">
@@ -40,7 +40,7 @@ export default {
         return {}
     },
     computed: {
-        ...mapState('setting', ['theme', 'isMobile', 'isFullScreen', 'layout', 'systemName', 'pageWidth']),
+        ...mapState('setting', ['theme', 'isMobile', 'isFullScreen', 'layout', 'systemName', 'pageWidth','showSideBar']),
         headerTheme () {
             if (this.layout == 'side' && this.theme.mode == 'dark' && !this.isMobile) {
                 return 'dark';
@@ -50,6 +50,11 @@ export default {
     },
     methods: {
         toggleCollapse () {
+            if(!this.showSideBar){
+                this.$message.destroy();
+                this.$message.warning('菜单栏已隐藏，暂无法点击！');
+                return;
+            }
             this.$emit('toggleCollapse');
         }
     }

@@ -55,13 +55,11 @@ export default {
             margin-bottom: 16px;
         }
         .desc {
+            color: @text-color-second;
             font-size: 14px;
             line-height: 22px;
-            color: @text-color-second;
-            margin-bottom: 24px;
         }
         .content {
-            padding: 24px 40px;
             border-radius: 2px;
             text-align: left;
             background-color: @background-color-light;

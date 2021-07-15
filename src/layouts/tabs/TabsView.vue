@@ -41,11 +41,11 @@ export default {
                 { key: '1', icon: 'vertical-right', text: this.$t('closeLeft') },
                 { key: '2', icon: 'vertical-left', text: this.$t('closeRight') },
                 { key: '3', icon: 'close', text: this.$t('closeOthers') },
-                { key: '4', icon: 'sync', text: this.$t('refresh') },
+                { key: '4', icon: 'sync', text: this.$t('refresh') }
             ]
         },
         tabsOffset () {
-            return this.multiPage ? 24 : 0
+            return this.multiPage ? 24 : 0;
         }
     },
     created () {

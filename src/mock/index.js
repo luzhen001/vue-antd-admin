@@ -8,5 +8,5 @@ import '@/mock/goods'
 
 // 设置全局延时
 Mock.setup({
-  timeout: '200-400'
+    timeout: '200-400'
 })

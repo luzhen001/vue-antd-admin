@@ -9,9 +9,10 @@
                 <a-icon type="user" />
                 <span>个人中心</span>
             </a-menu-item>
+            <a-menu-divider />
             <a-menu-item>
                 <a-icon type="setting" />
-                <span>设置</span>
+                <span>个人设置</span>
             </a-menu-item>
             <a-menu-divider />
             <a-menu-item @click="logout">

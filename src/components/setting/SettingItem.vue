@@ -14,7 +14,7 @@ export default {
     .setting-item {
         margin-bottom: 10px;
         .title {
-            font-size: 16px;
+            font-size: 17px;
             color: @title-color;
             line-height: 22px;
             margin-bottom: 10px;
