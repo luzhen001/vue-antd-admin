@@ -82,7 +82,7 @@ export default {
             state.lang = lang;
         },
         //全局设置是否显示隐藏
-        setSetting (state, isShowSetting) {
+        setShowSetting (state, isShowSetting) {
             state.isShowSetting = isShowSetting;
         },
         //是否全屏

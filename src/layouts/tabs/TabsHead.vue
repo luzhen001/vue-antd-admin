@@ -48,7 +48,6 @@ export default {
     },
     inject: ['adminLayout'],
     created () {
-        console.log(this.adminLayout);
         this.affixed = this.fixedTabs
     },
     computed: {

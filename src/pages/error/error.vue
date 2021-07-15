@@ -14,10 +14,10 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 import svg403 from '@/assets/images/403.svg'
 import svg404 from '@/assets/images/404.svg'
 import svg500 from '@/assets/images/500.svg'
-import { mapState } from 'vuex'
 export default {
     name: 'Error',
     props: ['type'],
@@ -27,17 +27,17 @@ export default {
                 403: {
                     img: svg403,
                     title: '403',
-                    desc: '抱歉，你无权访问该页面'
+                    desc: '抱歉，你无权访问该页面...'
                 },
                 404: {
                     img: svg404,
                     title: '404',
-                    desc: '抱歉，你访问的页面不存在或仍在开发中'
+                    desc: '抱歉，你访问的页面不存在或仍在开发中...'
                 },
                 500: {
                     img: svg500,
                     title: '500',
-                    desc: '抱歉，服务器出错了'
+                    desc: '抱歉，服务器出错了...'
                 }
             }
         }
@@ -45,7 +45,7 @@ export default {
     computed: {
         ...mapState('setting', ['pageMinHeight']),
         minHeight () {
-            return this.pageMinHeight ? this.pageMinHeight + 'px' : '100vh'
+            return this.pageMinHeight ? this.pageMinHeight + 'px' : '100vh';
         }
     },
     methods: {

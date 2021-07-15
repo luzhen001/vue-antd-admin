@@ -55,13 +55,10 @@
         </a-form>
     </a-card>
 </template>
-
 <script>
 import TagSelect from '../../../components/tool/TagSelect'
 import FormRow from '../../../components/form/FormRow'
-
 const TagSelectOption = TagSelect.Option
-
 export default {
     name: 'SearchForm',
     components: { FormRow, TagSelectOption, TagSelect },

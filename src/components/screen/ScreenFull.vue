@@ -5,7 +5,7 @@
 </template>
 <script>
 import screenfull from 'screenfull'
-import {mapMutations} from 'vuex'
+import { mapMutations } from 'vuex'
 export default {
     name: 'screenFull',
     data () {
@@ -20,7 +20,7 @@ export default {
         this.destroyScreenFull();
     },
     methods: {
-        ...mapMutations('setting',['setFullScreen']),
+        ...mapMutations('setting', ['setFullScreen']),
         toggleScreen () {
             if (!screenfull.isEnabled) {
                 this.$message.warn('对不起，您的浏览器不支持全屏模式！');

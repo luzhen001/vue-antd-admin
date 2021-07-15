@@ -68,7 +68,6 @@
                     {{$t('other.weekMode')}}
                     <a-switch :checked="weekMode" slot="actions" @change="setWeekMode" />
                 </a-list-item>
-                
             </a-list>
         </setting-item>
         <setting-item class="set_item">

@@ -21,19 +21,15 @@
         </a-list>
     </div>
 </template>
-
 <script>
 import SearchForm from './SearchForm'
 import AvatarList from '../../../components/tool/AvatarList'
-
 const AvatarListItem = AvatarList.Item
-
 export default {
     name: 'ProjectList',
     components: { AvatarListItem, AvatarList, SearchForm }
 }
 </script>
-
 <style lang="less" scoped>
     .content {
         display: flex;

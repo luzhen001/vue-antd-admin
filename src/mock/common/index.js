@@ -44,7 +44,7 @@ const logos = [
 
 const admins = ['ICZER', 'JACK', 'LUIS', 'DAVID']
 
-const groups = ['高逼格设计天团', '中二少女团', '科学搬砖组', '骗你学计算机', '程序员日常']
+const groups = ['高逼格设计天团', '中二少女团', '科学搬砖组', '骗你学计算机', '程序员日常', '小时代']
 
 const users = [
     {

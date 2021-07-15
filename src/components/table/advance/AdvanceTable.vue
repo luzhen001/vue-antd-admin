@@ -45,7 +45,6 @@
         </a-spin>
     </div>
 </template>
-
 <script>
 import ActionSize from '@/components/table/advance/ActionSize'
 import ActionColumns from '@/components/table/advance/ActionColumns'

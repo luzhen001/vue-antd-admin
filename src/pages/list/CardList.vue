@@ -14,8 +14,9 @@
                             <a-avatar class="card-avatar" slot="avatar" :src="item.avatar" size="large" />
                             <div class="meta-content" slot="description">{{item.content}}</div>
                         </a-card-meta>
-                        <a slot="actions">操作一</a>
-                        <a slot="actions">操作一</a>
+                        <a slot="actions">编辑</a>
+                        <a slot="actions">删除</a>
+                        <a slot="actions">查看</a>
                     </a-card>
                 </template>
             </a-list-item>
@@ -27,7 +28,7 @@ const dataSource = []
 dataSource.push({
     add: true
 })
-for (let i = 0; i < 11; i++) {
+for (let i = 0; i < 20; i++) {
     dataSource.push({
         title: 'Alipay',
         avatar: 'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png',
@@ -38,13 +39,6 @@ export default {
     name: 'CardList',
     data () {
         return {
-            desc: '段落示意：蚂蚁金服务设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态， 提供跨越设计与开发的体验解决方案。',
-            linkList: [
-                { icon: 'rocket', href: '/#/', title: '快速开始' },
-                { icon: 'info-circle-o', href: '/#/', title: '产品简介' },
-                { icon: 'file-text', href: '/#/', title: '产品文档' }
-            ],
-            extraImage: 'https://gw.alipayobjects.com/zos/rmsportal/RzwpdLnhmvDJToTdfDPe.png',
             dataSource
         }
     }

@@ -7,7 +7,7 @@
         <div v-if="fixedSideBar && !isMobile" :style="`width: ${sideMenuWidth}; min-width: ${sideMenuWidth};max-width: ${sideMenuWidth};`" class="virtual-side"></div>
         <drawer :visible="isShowSetting" placement="right">
             <div slot="handler">
-                <a-icon v-show="isShowSetting" class="setting" type="close" @click="setSetting(false)" />
+                <a-icon v-show="isShowSetting" class="setting" type="close" @click="setShowSetting(false)" />
             </div>
             <setting />
         </drawer>
@@ -63,19 +63,13 @@ export default {
         ...mapGetters('setting', ['firstMenu', 'subMenu', 'menuData']),
         sideMenuWidth () {
             if(this.isMobile){
-                return this.collapsed ? '0' : '256px'
+                return this.collapsed ? '0' : '256px';
             }else{
-                return this.collapsed ? '80px' : '256px'
+                return this.collapsed ? '80px' : '256px';
             }
         },
         headerStyle () {
-            //let width = (this.fixedHeader && this.layout !== 'head' && !this.isMobile) ? `calc(100% - ${this.sideMenuWidth})` : '100%'
-            let width;
-            if(this.fixedHeader && this.layout !== 'head' && !this.isMobile && this.showSideBar){
-                width = `calc(100% - ${this.sideMenuWidth})`;
-            }else{
-                width = '100%';
-            }
+            let width = (this.fixedHeader && !this.isMobile && this.showSideBar) ? `calc(100% - ${this.sideMenuWidth})` : '100%'
             let position = this.fixedHeader ? 'fixed' : 'static';
             return `width: ${width}; position: ${position};`;
         },
@@ -96,7 +90,7 @@ export default {
         this.correctPageMinHeight(-this.minHeight + 12);
     },
     methods: {
-        ...mapMutations('setting', ['setSetting','correctPageMinHeight', 'setActivatedFirst']),
+        ...mapMutations('setting', ['setShowSetting','correctPageMinHeight', 'setActivatedFirst']),
         toggleCollapse () {
             this.collapsed = !this.collapsed;
         },

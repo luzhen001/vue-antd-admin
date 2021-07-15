@@ -10,19 +10,15 @@
         </ul>
     </div>
 </template>
-
 <script>
 export default {
     name: 'RankingList',
     props: ['title', 'list']
 }
 </script>
-
 <style lang="less" scoped>
     .rank {
         padding: 0 32px 32px 72px;
-        .title {
-        }
         .list {
             margin: 25px 0 0;
             padding: 0;

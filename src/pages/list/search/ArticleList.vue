@@ -37,7 +37,6 @@
         </a-card>
     </div>
 </template>
-
 <script>
 import SearchForm from './SearchForm'
 export default {
@@ -45,7 +44,6 @@ export default {
     components: { SearchForm }
 }
 </script>
-
 <style lang="less" scoped>
     .extra {
         width: 272px;
