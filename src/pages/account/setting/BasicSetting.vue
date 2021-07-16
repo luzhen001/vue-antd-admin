@@ -1,19 +1,32 @@
 <template>
     <div class="account-settings-info-view">
         <a-row :gutter="16" type="flex" justify="center">
-            <a-col :order="isMobile ? 2 : 1" :md="24" :lg="16">
-                <a-form layout="vertical">
-                    <a-form-item :label="$t('account.settings.basic.nickname')">
-                        <a-input :placeholder="$t('account.settings.basic.nickname-message')" />
+            <a-col :md="24" :lg="16">
+                <a-form layout="horizontal">
+                    <a-form-item label="昵称">
+                        <a-input placeholder="请输入个人昵称" />
                     </a-form-item>
-                    <a-form-item :label="$t('account.settings.basic.profile')">
-                        <a-textarea rows="4" :placeholder="$t('account.settings.basic.profile-message')" />
+                    <a-form-item label="手机">
+                        <a-input placeholder="请输入个人手机号码" />
                     </a-form-item>
-                    <a-form-item :label="$t('account.settings.basic.email')" :required="false">
-                        <a-input placeholder="example@ant.design" />
+                    <a-form-item label="性别" default-value="女">
+                        <a-radio-group default-value="女">
+                            <a-radio value="男">男</a-radio>
+                            <a-radio value="女">女</a-radio>
+                            <a-radio value="保密">保密</a-radio>
+                        </a-radio-group>
+                    </a-form-item>
+                    <a-form-item label="邮箱" :required="false">
+                        <a-input placeholder="请输入个人邮箱" />
+                    </a-form-item>
+                    <a-form-item label="地址" :required="false">
+                        <a-input placeholder="请输入个人地址" />
+                    </a-form-item>
+                    <a-form-item label="简介">
+                        <a-textarea rows="4" placeholder="请输入个人简介" />
                     </a-form-item>
                     <a-form-item>
-                        <a-button type="primary">{{ $t('account.settings.basic.update') }}</a-button>
+                        <a-button type="primary">更新</a-button>
                     </a-form-item>
                 </a-form>
             </a-col>
@@ -32,18 +45,16 @@
 </template>
 <script>
 import AvatarModal from './AvatarModal'
-import { baseMixin } from '@/store/app-mixin'
+import avatar from '@/assets/images/avatar.jpg'
 export default {
-    mixins: [baseMixin],
     components: {
         AvatarModal
     },
     data () {
         return {
-            // cropper
-            preview: {},
+            value:'女',
             option: {
-                img: '/avatar2.jpg',
+                img: avatar,
                 info: true,
                 size: 1,
                 outputType: 'jpeg',
@@ -67,6 +78,12 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+    .ant-form-item{
+        display: flex;
+        /deep/.ant-form-item-control-wrapper{
+            flex: 1;
+        }
+    }
     .avatar-upload-wrapper {
         height: 200px;
         width: 100%;

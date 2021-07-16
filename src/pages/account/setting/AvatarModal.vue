@@ -45,8 +45,8 @@ export default {
             fileList: [],
             uploading: false,
             options: {
-                // img: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-                img: '',
+                img: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+                //img: '',
                 autoCrop: true,
                 autoCropWidth: 200,
                 autoCropHeight: 200,
@@ -59,7 +59,6 @@ export default {
         edit (id) {
             this.visible = true
             this.id = id
-            /* 获取原始头像 */
         },
         close () {
             this.id = null
