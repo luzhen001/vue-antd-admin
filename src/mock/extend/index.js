@@ -1,8 +1,6 @@
 import Mock from 'mockjs'
 import { logos, sayings, positions, avatars, admins } from '../common'
-
 const Random = Mock.Random
-
 const timeList = [
     {
         CN: '早上好',
@@ -26,7 +24,6 @@ const timeList = [
         US: 'Good evening',
     }
 ]
-
 const welcomeMessages = [
     {
         CN: '休息一会儿吧',
@@ -60,8 +57,7 @@ Random.extend({
     timeFix () {
         const time = new Date()
         const hour = time.getHours()
-        return hour < 9
-            ? timeList[0] : (hour <= 11 ? timeList[1] : (hour <= 13 ? timeList[2] : (hour <= 20 ? timeList[3] : timeList[4])))
+        return hour < 9 ? timeList[0] : (hour <= 11 ? timeList[1] : (hour <= 13 ? timeList[2] : (hour <= 20 ? timeList[3] : timeList[4])))
     },
     avatar () {
         return this.pick(avatars)

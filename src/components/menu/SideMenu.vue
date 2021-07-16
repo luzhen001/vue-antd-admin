@@ -87,5 +87,6 @@ export default {
     }
     .menu{
         padding: 0;
+       
     }
 </style>

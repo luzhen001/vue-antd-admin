@@ -23,12 +23,9 @@
         </a-card>
     </div>
 </template>
-
 <script>
-import DetailList from '../../components/tool/DetailList'
-
+import DetailList from '@/components/tool/DetailList'
 const DetailListItem = DetailList.Item
-
 const goodsColumns = [
     {
         title: '商品编号',
@@ -64,7 +61,6 @@ const goodsColumns = [
         align: 'right'
     }
 ]
-
 const goodsData = [
     {
         id: '1234561',
@@ -99,7 +95,6 @@ const goodsData = [
         amount: '25.50'
     }
 ]
-
 const scheduleColumns = [
     {
         title: '时间',
@@ -127,7 +122,6 @@ const scheduleColumns = [
         key: 'cost'
     }
 ]
-
 const scheduleData = [
     {
         key: '1',
@@ -170,7 +164,6 @@ const scheduleData = [
         cost: '5mins'
     }
 ]
-
 export default {
     name: 'BasicDetail',
     components: { DetailListItem, DetailList },

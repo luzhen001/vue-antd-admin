@@ -220,6 +220,11 @@ const options = {
                             component:()=>import('@/pages/components/backTop')
                         },
                         {
+                            name:'复制',
+                            path:'copyBoard',
+                            component:()=>import('@/pages/components/copyBoard')
+                        },
+                        {
                             name: '任务卡片',
                             path: 'taskCard',
                             component: () => import('@/pages/components/TaskCard')

@@ -47,7 +47,6 @@ export default {
     components: { SearchForm }
 }
 </script>
-
 <style lang="less" scoped>
     .clearfix() {
         zoom: 1;

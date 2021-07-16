@@ -6,7 +6,6 @@
         </a-row>
     </div>
 </template>
-
 <script>
 import ACol from 'ant-design-vue/es/grid/Col'
 const Item = {
@@ -107,7 +106,6 @@ export default {
             margin-bottom: 16px;
         }
         .term {
-            // Line-height is 22px IE dom height will calculate error
             line-height: 20px;
             padding-bottom: 16px;
             margin-right: 8px;

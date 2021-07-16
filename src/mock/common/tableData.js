@@ -40,7 +40,6 @@ const operation1 = [
         memo: '-'
     }
 ]
-
 const operation2 = [
     {
         key: 'op2',
@@ -67,7 +66,6 @@ const operation2 = [
         memo: '很棒'
     }
 ]
-
 const operation3 = [
     {
         key: 'op2',
@@ -86,7 +84,6 @@ const operation3 = [
         memo: '-'
     }
 ]
-
 const operationColumns = [
     {
         title: '操作类型',
