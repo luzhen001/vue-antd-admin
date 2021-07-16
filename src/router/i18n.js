@@ -9,15 +9,15 @@ module.exports = {
         HK: {
             home: { name: '首頁' },
             dashboard: {
-                name: 'Dashboard',
-                workplace: { name: '工作台' },
+                name: '儀表盤',
+                workplace: { name: '工作臺' },
                 analysis: { name: '分析頁' }
             },
             form: {
                 name: '表單頁',
                 basic: { name: '基礎表單' },
                 step: { name: '分步表單' },
-                advance: { name: '分步表單' }
+                advance: { name: '高級表單' }
             },
             list: {
                 name: '列表頁',
@@ -41,16 +41,28 @@ module.exports = {
                 success: { name: '成功' },
                 error: { name: '失敗' }
             },
-            exception: {
+            error: {
                 name: '異常頁',
                 404: { name: '404' },
                 403: { name: '403' },
                 500: { name: '500' }
             },
             components: {
-                name: '小組件',
+                name: '內置組件',
+                backtop:{name:'返回頂部'},
                 taskCard: { name: '任務卡片' },
-                palette: { name: '顏色複選框' }
+                table: { name: '高級表格' }
+            },
+            account:{
+                name:'個人中心',
+                profile: { name: '個人中心' },
+                setting: { name: '個人設置' }
+            },
+            menuquery:{
+                name:'帶參菜單'
+            },
+            menudynamic:{
+                name:'動態路由菜單'
             }
         }
     }

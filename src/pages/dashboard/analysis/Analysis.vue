@@ -111,6 +111,7 @@
                 </a-card>
             </a-col>
         </a-row>
+        <back-top />
     </div>
 </template>
 <script>
@@ -123,6 +124,7 @@ import RankingList from '../../../components/chart/RankingList'
 import HotSearch from './HotSearch'
 import SalesData from './SalesData'
 import Trend from '../../../components/chart/Trend'
+import BackTop from '@/components/BackTop'
 const rankList = []
 for (let i = 0; i < 8; i++) {
     rankList.push({
@@ -142,7 +144,7 @@ export default {
     created () {
         setTimeout(() => this.loading = !this.loading, 1000)
     },
-    components: { Trend, SalesData, HotSearch, RankingList, Bar, MiniProgress, MiniBar, MiniArea, ChartCard }
+    components: {BackTop, Trend, SalesData, HotSearch, RankingList, Bar, MiniProgress, MiniBar, MiniArea, ChartCard }
 }
 </script>
 <style lang="less" scoped>

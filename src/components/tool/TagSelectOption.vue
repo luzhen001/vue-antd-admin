@@ -3,7 +3,6 @@
         <slot></slot>
     </a-checkable-tag>
 </template>
-
 <script>
 export default {
     name: 'TagSelectOption',

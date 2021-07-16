@@ -4,7 +4,7 @@
     </a-card>
 </template>
 <script>
-import Result from '@/components/result'
+import Result from '@/components/Result'
 export default {
     name: 'Error',
     components: { Result },

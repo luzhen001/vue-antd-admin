@@ -27,7 +27,7 @@
 <script>
 import HeaderBreadcrumb from './HeaderBreadcrumb'
 import HeaderNotice from './HeaderNotice'
-import ScreenFull from '@/components/screen/ScreenFull'
+import ScreenFull from '@/components/ScreenFull'
 import HeaderSetting from './HeaderSetting'
 import HeaderLanguage from './HeaderLanguage'
 import HeaderAvatar from './HeaderAvatar'

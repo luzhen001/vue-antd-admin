@@ -4,14 +4,12 @@
         <p>{{content}}</p>
     </div>
 </template>
-
 <script>
 export default {
     name: 'HeadInfo',
     props: ['title', 'content', 'bordered']
 }
 </script>
-
 <style lang="less" scoped>
     .head-info {
         text-align: center;

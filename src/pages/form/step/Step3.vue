@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-import Result from '@/components/result'
+import Result from '@/components/Result'
 export default {
     name: 'Step3',
     i18n: require('./i18n'),

@@ -30,7 +30,7 @@ const options = {
             redirect: '/login',
             children: [
                 {
-                    name: 'Dashboard',
+                    name: '仪表盘',
                     path: 'dashboard',
                     meta: {
                         icon: 'dashboard'
@@ -105,7 +105,7 @@ const options = {
                                 highlight: '/list/query',
                                 invisible: true
                             },
-                            component: () => import('@/pages/Demo')
+                            component: () => import('@/pages/list/QueryList')
                         },
                         {
                             path: 'primary',
@@ -215,6 +215,11 @@ const options = {
                     component: BlankView,
                     children: [
                         {
+                            name:'返回顶部',
+                            path:'backtop',
+                            component:()=>import('@/pages/components/backTop')
+                        },
+                        {
                             name: '任务卡片',
                             path: 'taskCard',
                             component: () => import('@/pages/components/TaskCard')
@@ -248,25 +253,27 @@ const options = {
                 },
                 {
                     name: '带参菜单',
-                    path: 'router/query',
+                    path: 'menuquery',
                     meta: {
                         icon: 'project',
                         query: {
-                            name: '菜单默认参数'
+                            name: 'zhangsan',
+                            age:18,
+                            uid:'123456789'
                         }
                     },
-                    component: () => import('@/pages/Demo')
+                    component: () => import('@/pages/menuQuery')
                 },
                 {
                     name: '动态路由菜单',
-                    path: 'router/dynamic/:id',
+                    path: 'menudynamic/:id',
                     meta: {
                         icon: 'project',
                         params: {
                             id: 123
                         }
                     },
-                    component: () => import('@/pages/Demo')
+                    component: () => import('@/pages/menuDynamic')
                 }
             ]
         }
