@@ -41,12 +41,12 @@
                             </a-form-item>
                         </a-tab-pane>
                     </a-tabs>
-                    <div>
+                    <div class="login_info">
                         <a-checkbox :checked="true">自动登录</a-checkbox>
-                        <a style="float: right" @click="handleForgetPwdBtn">忘记密码</a>
+                        <router-link to="/forgetPwd">忘记密码</router-link>
                     </div>
                     <a-form-item>
-                        <a-button :loading="logging" style="width: 100%;margin-top: 24px" size="large" htmlType="submit" type="primary">登录</a-button>
+                        <a-button :loading="logging" class="login_btn" size="large" htmlType="submit" type="primary">登录</a-button>
                     </a-form-item>
                 </a-form>
             </div>
@@ -110,9 +110,6 @@ export default {
             } else {
                 this.error = loginRes.message;
             }
-        },
-        handleForgetPwdBtn(){
-            this.$router.push('/forgetPwd')
         }
     }
 }
@@ -156,6 +153,14 @@ export default {
                     .captcha-button {
                         font-size: 14px;
                     }
+                }
+                .login_info{
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .login_btn{
+                    width: 100%;
+                    margin-top: 30px;
                 }
             }
         }

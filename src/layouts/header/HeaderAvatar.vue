@@ -5,12 +5,12 @@
             <span class="name">{{user.name}}</span>
         </div>
         <a-menu :class="['avatar-menu']" slot="overlay">
-            <a-menu-item>
+            <a-menu-item @click="handleUserSet('/account/profile')">
                 <a-icon type="user" />
                 <span>个人中心</span>
             </a-menu-item>
             <a-menu-divider />
-            <a-menu-item>
+            <a-menu-item @click="handleUserSet('/account/setting')">
                 <a-icon type="setting" />
                 <span>个人设置</span>
             </a-menu-item>
@@ -31,6 +31,9 @@ export default {
         ...mapGetters('account', ['user']),
     },
     methods: {
+        handleUserSet(url){
+            this.$router.push(url)
+        },
         logout () {
             logout()
             this.$router.push('/login')
@@ -41,12 +44,11 @@ export default {
 <style lang="less">
     .header-avatar {
         display: inline-flex;
-        .avatar,
-        .name {
+        .avatar, .name {
             align-self: center;
         }
         .avatar {
-            margin-right: 8px;
+            margin-right: 4px;
         }
         .name {
             font-weight: 500;

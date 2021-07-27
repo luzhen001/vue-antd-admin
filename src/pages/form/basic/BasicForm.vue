@@ -23,6 +23,9 @@
                 <a-input-number :min="0" :max="100" />
                 <span>%</span>
             </a-form-item>
+            <a-form-item :label="$t('isDisabled')" :labelCol="{span: 7}" :wrapperCol="{span: 10}" :required="false">
+                <a-switch default-checked checked-children="Y" un-checked-children="N" />
+            </a-form-item>
             <a-form-item :label="$t('disclosure')" :labelCol="{span: 7}" :wrapperCol="{span: 10}" :required="false" :help="$t('disclosureDesc')">
                 <a-radio-group v-model="value">
                     <a-radio :value="1">{{$t('public')}}</a-radio>

@@ -5,7 +5,8 @@ const direct_2 = ['topLeft', 'bottomRight', 'topRight', 'bottomLeft']
 const direct_3 = ['downLeft', 'upRight', 'downRight', 'upLeft']
 // animate.css 配置
 const ANIMATE = {
-    preset: [ //预设动画配置
+    //预设动画配置
+    preset: [
         { name: 'back', alias: '渐近', directions: direct_1 },
         { name: 'bounce', alias: '弹跳', directions: direct_1.concat('default') },
         { name: 'fade', alias: '淡化', directions: direct_1.concat(direct_1_b).concat(direct_2).concat('default') },

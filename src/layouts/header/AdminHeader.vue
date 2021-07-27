@@ -147,16 +147,16 @@ export default {
                     display: flex;
                     align-items: center;
                 }
+                
                 each(@theme-list, {
-                            &.@{value} .header-item {
-                                &:hover {
-                                    @class: ~'hover-bg-color-@{value}';
-                                    background-color: @@class;
-                                }
+                        &.@{value} .header-item {
+                            &:hover {
+                                @class: ~'hover-bg-color-@{value}';
+                                background-color: @@class;
                             }
                         }
-
-                    );
+                    }
+                )
             }
         }
     }

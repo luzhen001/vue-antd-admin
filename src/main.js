@@ -6,7 +6,6 @@ import './assets/theme/index.less'
 import Antd from 'ant-design-vue'
 import Viser from 'viser-vue'
 import '@/mock'
-import * as filters from './filters' //全局筛选器
 import 'animate.css/source/animate.css'
 import Plugins from '@/plugins'
 import { initI18n } from '@/utils/i18n'
@@ -18,9 +17,6 @@ Vue.use(Antd)
 Vue.config.productionTip = false
 Vue.use(Viser)
 Vue.use(Plugins)
-Object.keys(filters).forEach(key => {
-    Vue.filter(key, filters[key])
-})
 bootstrap({ router, store, i18n, message: Vue.prototype.$message })
 new Vue({
     router,

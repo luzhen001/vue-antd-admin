@@ -14,7 +14,7 @@
         <a-layout class="admin-layout-main">
             <admin-header :class="[{'fixed-tabs': fixedTabs, 'fixed-header': fixedHeader, 'multi-page': multiPage}]" :style="headerStyle" :menuData="headMenuData" :collapsed="collapsed" @toggleCollapse="toggleCollapse" />
             <a-layout-header :class="['virtual-header', {'fixed-tabs' : fixedTabs, 'fixed-header': fixedHeader, 'multi-page': multiPage}]" v-show="fixedHeader"></a-layout-header>
-            <a-layout-content class="admin-layout-content" :style="`min-height: ${minHeight}px;`">
+            <a-layout-content class="admin-layout-content" :class="{'no-multipage':!multiPage}" :style="`min-height: ${minHeight}px;`">
                 <slot></slot>
             </a-layout-content>
             <a-layout-footer style="padding: 0px">
@@ -28,14 +28,14 @@ import AdminHeader from './header/AdminHeader'
 import PageFooter from './footer/PageFooter'
 import Drawer from '../components/tool/Drawer'
 import SideMenu from '../components/menu/SideMenu'
-import Setting from '../components/setting/Setting'
+import Setting from '../components/Setting'
 import { mapState, mapMutations, mapGetters } from 'vuex'
 export default {
     name: 'AdminLayout',
     components: { Setting, SideMenu, Drawer, PageFooter, AdminHeader },
     data () {
         return {
-            minHeight: window.innerHeight - 64 - 100,
+            minHeight: window.innerHeight - 164,
             collapsed: false,
             drawerOpen: false
         }
@@ -145,8 +145,11 @@ export default {
             }
         }
         .admin-layout-content {
-            padding: 0 12px 0;
+            padding: 0 10px 0;
             overflow: hidden;
+        }
+        .no-multipage{
+            padding: 10px 10px 0;
         }
         .setting {
             background-color: @primary-color;

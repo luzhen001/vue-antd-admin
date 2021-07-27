@@ -17,12 +17,12 @@ module.exports = {
                 },
                 fixedHeader: '固定Header',
                 showSidebar: '显示侧边栏',
-                fixedSideBar: '固定侧边栏'
+                fixedSideBar: '固定侧边栏',
+                multiPages: '多页签模式'
             },
             other: {
                 title: '其他设置',
-                weekMode: '色弱模式',
-                multiPages: '多页签模式'
+                weekMode: '色弱模式'
             },
             animate: {
                 title: '页面切换动画',
@@ -51,11 +51,11 @@ module.exports = {
                 fixedHeader: '固定Header',
                 showSidebar: '显示側邊欄',
                 fixedSideBar: '固定側邊欄',
+                multiPages: '多頁簽模式'
             },
             other: {
                 title: '其他設置',
-                weekMode: '色弱模式',
-                multiPages: '多頁簽模式'
+                weekMode: '色弱模式'
             },
             animate: {
                 title: '頁面切換動畫',
@@ -84,11 +84,11 @@ module.exports = {
                 fixedHeader: 'Fixed Header',
                 showSidebar: 'Show SideBar',
                 fixedSideBar: 'Fixed SideBar',
+                multiPages: 'Multi Pages'
             },
             other: {
                 title: 'Other Setting',
-                weekMode: 'Week Mode',
-                multiPages: 'Multi Pages'
+                weekMode: 'Week Mode'
             },
             animate: {
                 title: 'Page Toggle Animation',

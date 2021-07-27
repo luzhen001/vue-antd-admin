@@ -1,4 +1,4 @@
-// 此配置为系统默认设置，需修改的设置项，在src/config/config.js中添加修改项即可。也可直接在此文件中修改。
+// 此配置为系统默认设置，需修改的设置项，可直接在此文件中修改。
 module.exports = {
     lang: 'CN',                           //语言，可选 CN(简体)、HK(繁体)、US(英语)，也可扩展其它语言
     theme: {                              //主题
@@ -6,7 +6,7 @@ module.exports = {
         mode: 'dark',                     //主题模式 可选 dark、 light 和 night
         success: '#52c41a',               //成功色
         warning: '#faad14',               //警告色
-        error: '#f5222f',                 //错误色
+        error: '#e93038',                 //错误色
     },
     layout: 'side',                       //导航布局，side
     fixedHeader: true,                    //固定头部状态栏，true:固定，false:不固定
@@ -26,7 +26,7 @@ module.exports = {
     filterMenu: true,                     //根据权限过滤菜单，true:过滤，false:不过滤
     animate: {                            //动画设置
         disabled: false,                  //禁用动画，true:禁用，false:启用
-        name: 'bounce',                   //动画效果，支持的动画效果可参考 ./animate.config.js
+        name: 'lightSpeed',                   //动画效果，支持的动画效果可参考 ./animate.config.js
         direction: 'left'                 //动画方向，切换页面时动画的方向，参考 ./animate.config.js
     },
     footerLinks: [                        //页面底部链接，{link: '链接地址', name: '名称/显示文字', icon: '图标，支持 ant design vue 图标库'}

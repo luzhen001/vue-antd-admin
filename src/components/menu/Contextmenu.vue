@@ -70,7 +70,4 @@ export default {
         border-radius: 4px;
         box-shadow: -4px 4px 16px 1px @shadow-color !important;
     }
-    .ant-menu-item {
-        margin: 0 !important;
-    }
 </style>

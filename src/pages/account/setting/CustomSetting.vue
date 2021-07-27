@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import Setting from '@/components/setting/Setting'
+import Setting from '@/components/Setting'
 export default {
     name:'CustomSetting',
     components:{
@@ -14,7 +14,7 @@ export default {
 </script>
 <style lang="less" scoped>
     .set-wrap{
-        width: 50%;
+        width: 100%;
         .side-setting{
             padding:  0 12px;
         }

@@ -7,14 +7,17 @@
     scrollbar-width: thin;
     -ms-overflow-style: none;
     position: relative;
+
     &::-webkit-scrollbar {
         width: 6px;
         height: 1px;
     }
+
     &::-webkit-scrollbar-thumb {
         border-radius: 6px;
         background: @primary-color;
     }
+
     &::-webkit-scrollbar-track {
         border-radius: 6px;
         background: @primary-3;
@@ -33,18 +36,30 @@
     pointer-events: none;
 }
 /*多页签模式*/
-.tabs-container{
-    .ant-tabs-bar{
+.tabs-container {
+    .ant-tabs-bar {
         margin: 0 auto;
     }
 }
-//头部右边icon字体大小
+//icon字体大小
 .icon_18 {
     font-size: 18px;
 }
+//左边菜单icon字体大小
+.ant-menu-item .anticon,
+.ant-menu-submenu-title .anticon {
+    font-size: 16px;
+}
 /*menu菜单*/
-.menu{
-    .ant-menu-submenu-selected{
-        color: @primary-color!important;
+.menu {
+    .ant-menu-submenu-selected {
+        color: @primary-color !important;
     }
+}
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
 }

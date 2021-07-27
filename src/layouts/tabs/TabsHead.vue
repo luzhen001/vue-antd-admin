@@ -143,9 +143,9 @@ export default {
         &.affixed {
             margin: 0 auto;
             top: 0px;
-            padding: 8px 12px 8px;
+            padding: 8px 10px 8px;
             position: fixed;
-            z-index: 1;
+            z-index: 2;
             background-color: @layout-body-background;
             &.side,
             &.mix {

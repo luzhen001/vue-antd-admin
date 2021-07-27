@@ -1,7 +1,5 @@
 <template>
-    <div class="header-screen">
-        <a-icon @click="toggleScreen" class="icon_18" :type="isFullScreen ? 'fullscreen-exit' : 'fullscreen'" />
-    </div>
+    <a-icon @click="toggleScreen" :type="isFullScreen ? 'fullscreen-exit' : 'fullscreen'" class="icon_18" />
 </template>
 <script>
 import screenfull from 'screenfull'

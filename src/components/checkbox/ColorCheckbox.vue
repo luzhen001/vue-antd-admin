@@ -74,7 +74,6 @@ const Group = {
         )
     }
 }
-
 export default {
     name: 'ColorCheckbox',
     Group: Group,

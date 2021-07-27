@@ -36,12 +36,13 @@
                     <a-switch :checked="fixedSideBar" slot="actions" @change="setFixedSideBar" />
                 </a-list-item>
                 <a-list-item>
-                    {{$t('other.multiPages')}}
+                    {{$t('navigate.multiPages')}}
                     <a-switch :checked="multiPage" slot="actions" @change="setMultiPage" />
                 </a-list-item>
             </a-list>
         </setting-item>
-        <a-divider />  <setting-item :title="$t('animate.title')">
+        <a-divider />
+        <setting-item :title="$t('animate.title')">
             <a-list :split="false">
                 <a-list-item>
                     {{$t('animate.disable')}}
@@ -81,9 +82,7 @@ import SettingItem from './SettingItem'
 import { ColorCheckbox, ImgCheckbox } from '@/components/checkbox'
 import { mapState, mapMutations } from 'vuex'
 import { setting } from '@/config/default'
-import sysConfig from '@/config/config'
 import fastEqual from 'fast-deep-equal'
-import deepMerge from 'deepmerge'
 import darkStyle from '@/assets/images/set_dark_style.svg'
 import lightStyle from '@/assets/images/set_light_style.svg'
 import nightStyle from '@/assets/images/set_night_style.svg'
@@ -165,10 +164,10 @@ export default {
             })
         },
         //提取配置
-        extractConfig (local = false) {
+        extractConfig () {
             let config = {};
             let mySetting = this.$store.state.setting;
-            let dftSetting = local ? deepMerge(setting, sysConfig) : setting;
+            let dftSetting = setting;
             Object.keys(mySetting).forEach(key => {
                 const dftValue = dftSetting[key];
                 const myValue = mySetting[key];
@@ -176,7 +175,7 @@ export default {
                     config[key] = myValue;
                 }
             })
-            return config
+            return config;
         }
     }
 }
@@ -186,12 +185,8 @@ export default {
         min-height: 100%;
         padding: 24px;
         font-size: 14px;
-        line-height: 1.5;
         word-wrap: break-word;
         background-color: @base-bg-color;
-        .flex {
-            display: flex;
-        }
         .set_item{
             padding: 0 0 10px;
         }

@@ -13,14 +13,22 @@ export default {
     data () {
         return {
             dataList: [
-                {uid:'111'},
-                {uid:'222'},
-                {uid:'333'},
-                {uid:'444'},
-                {uid:'555'},
-                {uid:'666'},
-                {uid:'777'},
-                {uid:'888'},
+                {uid:'aaaaaa'},
+                {uid:'bbbbbb'},
+                {uid:'cccccc'},
+                {uid:'dddddd'},
+                {uid:'eeeeee'},
+                {uid:'ffffff'},
+                {uid:'gggggg'},
+                {uid:'hhhhhh'},
+                {uid:'iiiiii'},
+                {uid:'jjjjjj'},
+                {uid:'kkkkkk'},
+                {uid:'llllll'},
+                {uid:'mmmmmm'},
+                {uid:'nnnnnn'},
+                {uid:'oooooo'},
+                {uid:'pppppp'},
             ]
         }
     },

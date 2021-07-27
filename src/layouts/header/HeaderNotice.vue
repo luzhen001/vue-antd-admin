@@ -83,7 +83,6 @@ export default {
         .notice-badge {
             color: inherit;
             .header-notice-icon {
-                font-size: 16px;
                 padding: 4px;
             }
         }

@@ -50,28 +50,28 @@ export default {
     },
     mutations: {
         setDevice (state, isMobile) {
-            state.isMobile = isMobile
+            state.isMobile = isMobile;
         },
         setTheme (state, theme) {
-            state.theme = theme
+            state.theme = theme;
         },
         setLayout (state, layout) {
-            state.layout = layout
+            state.layout = layout;
         },
         setMultiPage (state, multiPage) {
-            state.multiPage = multiPage
+            state.multiPage = multiPage;
         },
         setAnimate (state, animate) {
-            state.animate = animate
+            state.animate = animate;
         },
         setWeekMode (state, weekMode) {
-            state.weekMode = weekMode
+            state.weekMode = weekMode;
         },
         setFixedHeader (state, fixedHeader) {
-            state.fixedHeader = fixedHeader
+            state.fixedHeader = fixedHeader;
         },
         setFixedSideBar (state, fixedSideBar) {
-            state.fixedSideBar = fixedSideBar
+            state.fixedSideBar = fixedSideBar;
         },
         //是否显示侧栏
         setShowSideBar(state,showSideBar){
@@ -90,32 +90,32 @@ export default {
             state.isFullScreen = isFullScreen;
         },
         correctPageMinHeight (state, minHeight) {
-            state.pageMinHeight += minHeight
+            state.pageMinHeight += minHeight;
         },
         setMenuData (state, menuData) {
-            state.menuData = menuData
+            state.menuData = menuData;
         },
         setAsyncRoutes (state, asyncRoutes) {
-            state.asyncRoutes = asyncRoutes
+            state.asyncRoutes = asyncRoutes;
         },
         setPageWidth (state, pageWidth) {
-            state.pageWidth = pageWidth
+            state.pageWidth = pageWidth;
         },
         setActivatedFirst (state, activatedFirst) {
-            state.activatedFirst = activatedFirst
+            state.activatedFirst = activatedFirst;
         },
         setFixedTabs (state, fixedTabs) {
-            state.fixedTabs = fixedTabs
+            state.fixedTabs = fixedTabs;
         },
         setCustomTitle (state, { path, title }) {
             if (title) {
-                const obj = state.customTitles.find(item => item.path === path)
+                const obj = state.customTitles.find(item => item.path === path);
                 if (obj) {
-                    obj.title = title
+                    obj.title = title;
                 } else {
-                    state.customTitles.push({ path, title })
+                    state.customTitles.push({ path, title });
                 }
-                sessionStorage.setItem(process.env.VUE_APP_TBAS_TITLES_KEY, JSON.stringify(state.customTitles))
+                sessionStorage.setItem(process.env.VUE_APP_TBAS_TITLES_KEY, JSON.stringify(state.customTitles));
             }
         }
     }

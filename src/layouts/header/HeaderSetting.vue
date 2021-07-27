@@ -1,7 +1,5 @@
 <template>
-    <div class="icon_wrap">
-        <a-icon type="setting" class="icon_18" @click="setShowSetting(true)"/>
-    </div>
+    <a-icon type="setting" class="icon_18" @click="setShowSetting(true)"/>
 </template>
 <script>
 import {mapMutations} from 'vuex'
