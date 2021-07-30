@@ -16,7 +16,7 @@
 import TabsHead from './TabsHead'
 import AdminLayout from '@/layouts/AdminLayout'
 import Contextmenu from '@/components/menu/Contextmenu'
-import PageToggleTransition from '@/components/transition/PageToggleTransition'
+import PageToggleTransition from '@/components/Transition'
 import { mapState, mapMutations } from 'vuex'
 import { getI18nKey } from '@/utils/routerUtil'
 import AKeepAlive from '@/components/cache/AKeepAlive'

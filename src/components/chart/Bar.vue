@@ -10,9 +10,7 @@
         </div>
     </div>
 </template>
-
 <script>
-
 const data = []
 for (let i = 0; i < 12; i += 1) {
     data.push({
@@ -27,7 +25,6 @@ const tooltip = [
         value: y
     })
 ]
-
 const scale = [{
     dataKey: 'x',
     min: 2

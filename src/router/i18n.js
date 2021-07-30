@@ -24,6 +24,7 @@ module.exports = {
                 query: { name: '查詢表格' },
                 primary: { name: '標準列表' },
                 card: { name: '卡片列表' },
+                table: { name: '高級表格' },
                 search: {
                     name: '搜索列表',
                     article: { name: '文章' },
@@ -38,8 +39,9 @@ module.exports = {
             },
             result: {
                 name: '結果頁',
-                success: { name: '成功' },
-                error: { name: '失敗' }
+                warning: { name: '警告' },
+                error: { name: '失敗' },
+                success: { name: '成功' }
             },
             error: {
                 name: '異常頁',
@@ -50,8 +52,7 @@ module.exports = {
             components: {
                 name: '內置組件',
                 backtop:{name:'返回頂部'},
-                taskCard: { name: '任務卡片' },
-                table: { name: '高級表格' }
+                taskCard: { name: '任務卡片' }
             },
             account:{
                 name:'個人中心',

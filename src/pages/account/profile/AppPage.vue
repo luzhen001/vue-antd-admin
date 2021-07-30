@@ -86,7 +86,6 @@ export default {
                 text-align: left;
                 float: left;
                 width: 50%;
-
                 p {
                     line-height: 32px;
                     font-size: 24px;

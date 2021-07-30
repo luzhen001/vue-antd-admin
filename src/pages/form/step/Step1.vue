@@ -10,6 +10,7 @@
                 <a-select defaultValue="alipay" style="width: 100px">
                     <a-select-option value="alipay">{{$t('alipay')}}</a-select-option>
                     <a-select-option value="wexinpay">{{$t('wechat')}}</a-select-option>
+                    <a-select-option value="bankcard">{{$t('bankCard')}}</a-select-option>
                 </a-select>
                 <a-input :style="{width: 'calc(100% - 100px)'}" value="test@example.com" />
             </a-input-group>

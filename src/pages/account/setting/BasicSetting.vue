@@ -3,11 +3,17 @@
         <a-row :gutter="16" type="flex" justify="center">
             <a-col :md="24" :lg="16">
                 <a-form layout="horizontal">
+                    <a-form-item label="姓名">
+                        <a-input placeholder="请输入姓名" />
+                    </a-form-item>
                     <a-form-item label="昵称">
-                        <a-input placeholder="请输入个人昵称" />
+                        <a-input placeholder="请输入昵称" />
                     </a-form-item>
                     <a-form-item label="手机">
-                        <a-input placeholder="请输入个人手机号码" />
+                        <a-input placeholder="请输入手机号码" />
+                    </a-form-item>
+                    <a-form-item label="邮箱" :required="false">
+                        <a-input placeholder="请输入邮箱" />
                     </a-form-item>
                     <a-form-item label="性别" default-value="女">
                         <a-radio-group default-value="女">
@@ -16,14 +22,11 @@
                             <a-radio value="保密">保密</a-radio>
                         </a-radio-group>
                     </a-form-item>
-                    <a-form-item label="邮箱" :required="false">
-                        <a-input placeholder="请输入个人邮箱" />
-                    </a-form-item>
                     <a-form-item label="地址" :required="false">
-                        <a-input placeholder="请输入个人地址" />
+                        <a-input placeholder="请输入地址" />
                     </a-form-item>
                     <a-form-item label="简介">
-                        <a-textarea rows="4" placeholder="请输入个人简介" />
+                        <a-textarea rows="4" placeholder="请输入简介" />
                     </a-form-item>
                     <a-form-item>
                         <a-button type="primary">更新</a-button>

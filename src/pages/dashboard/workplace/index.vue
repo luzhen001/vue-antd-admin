@@ -65,9 +65,8 @@
     </a-row>
 </template>
 <script>
-// import HeadInfo from '@/components/tool/HeadInfo'
-import Radar from '@/components/chart/Radar'
 import { mapState } from 'vuex'
+import Radar from '@/components/chart/Radar'
 import { request, METHOD } from '@/utils/request'
 export default {
     name: 'WorkPlace',

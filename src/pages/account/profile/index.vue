@@ -39,7 +39,6 @@
                         </div>
                     </div>
                     <a-divider :dashed="true" />
-
                     <div class="account-center-team">
                         <div class="teamTitle">团队</div>
                         <a-spin :spinning="teamSpinning">

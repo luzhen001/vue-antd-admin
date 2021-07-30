@@ -11,7 +11,7 @@ const routerMap = {
         component: () => import('@/pages/login')
     },
     forgetPwd:{
-        path:'/forgetPwd',
+        path:'/forgetpwd',
         name:'忘记密码',
         component:()=> import('@/pages/forgetPwd')
     },
@@ -98,12 +98,12 @@ const routerMap = {
     basicDetails: {
         path: 'basic',
         name: '基础详情页',
-        component: () => import('@/pages/detail/BasicDetail')
+        component: () => import('@/pages/detail/basic')
     },
     advanceDetails: {
         path: 'advance',
         name: '高级详情页',
-        component: () => import('@/pages/detail/AdvancedDetail')
+        component: () => import('@/pages/detail/advance')
     },
     result: {
         name: '结果页',
@@ -112,11 +112,11 @@ const routerMap = {
     },
     success: {
         name: '成功',
-        component: () => import('@/pages/result/Success')
+        component: () => import('@/pages/result/success')
     },
     error: {
         name: '失败',
-        component: () => import('@/pages/result/Error')
+        component: () => import('@/pages/result/error')
     },
     exception: {
         name: '异常页',

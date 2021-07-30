@@ -44,11 +44,41 @@ export function parseTime (time, cFormat) {
     })
     return time_str;
 }
+/**
+ * 获取当前日期的前后n天日期
+ * @param {n} int
+ * @returns {string}
+ */
+ export function getAroundDate (n, type) {
+    const date = new Date();
+    date.setDate(date.getDate() + n);
+    const year = date.getFullYear();
+    const month = formatString(date.getMonth() + 1);
+    const day = formatString(date.getDate());
+    if (type == 1) {
+        return year + '-' + month + '-' + day;
+    } else if (type == 2) {
+        return month + '-' + day;
+    } else {
+        return year + '-' + month + '-' + day;
+    }
+}
+
+/**
+ * @param {n} string
+ * @returns {string}
+ */
+export function formatString (n) {
+    n = n.toString();
+    return n[1] ? n : '0' + n;
+}
+
 
 
 export function isDef (v) {
     return v !== undefined && v !== null
 }
+
 /**
  * Remove an item from an array.
  */

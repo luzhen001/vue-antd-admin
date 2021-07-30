@@ -7,31 +7,31 @@
             </div>
             <div class="login">
                 <a-form @submit="onSubmit" :form="form">
-                    <a-tabs size="large" :tabBarStyle="{textAlign: 'center'}" style="padding: 0 2px;">
+                    <a-tabs size="large" :tabBarStyle="{textAlign: 'center'}">
                         <a-tab-pane tab="账户密码登录" key="1">
                             <a-alert type="error" :closable="true" v-show="error" :message="error" showIcon style="margin-bottom: 24px;" />
                             <a-form-item>
                                 <a-input autocomplete="autocomplete" size="large" placeholder="admin" v-decorator="['name', {rules: [{ required: false, message: '请输入账户名', whitespace: true}]}]">
-                                    <a-icon slot="prefix" type="user" />
+                                    <a-icon slot="prefix" type="user" class="icon_16" />
                                 </a-input>
                             </a-form-item>
                             <a-form-item>
                                 <a-input size="large" placeholder="888888" autocomplete="autocomplete" type="password" v-decorator="['password', {rules: [{ required: false, message: '请输入密码', whitespace: true}]}]">
-                                    <a-icon slot="prefix" type="lock" />
+                                    <a-icon slot="prefix" type="lock" class="icon_16" />
                                 </a-input>
                             </a-form-item>
                         </a-tab-pane>
                         <a-tab-pane tab="手机号登录" key="2">
                             <a-form-item>
                                 <a-input size="large" placeholder="mobile number">
-                                    <a-icon slot="prefix" type="mobile" />
+                                    <a-icon slot="prefix" type="mobile" class="icon_16" />
                                 </a-input>
                             </a-form-item>
                             <a-form-item>
                                 <a-row :gutter="8" style="margin: 0 -4px">
                                     <a-col :span="16">
                                         <a-input size="large" placeholder="captcha">
-                                            <a-icon slot="prefix" type="mail" />
+                                            <a-icon slot="prefix" type="mail" class="icon_16" />
                                         </a-input>
                                     </a-col>
                                     <a-col :span="8" style="padding-left: 4px">
@@ -43,7 +43,7 @@
                     </a-tabs>
                     <div class="login_info">
                         <a-checkbox :checked="true">自动登录</a-checkbox>
-                        <router-link to="/forgetPwd">忘记密码</router-link>
+                        <router-link to="/forgetpwd">忘记密码</router-link>
                     </div>
                     <a-form-item>
                         <a-button :loading="logging" class="login_btn" size="large" htmlType="submit" type="primary">登录</a-button>
@@ -161,6 +161,9 @@ export default {
                 .login_btn{
                     width: 100%;
                     margin-top: 30px;
+                }
+                /deep/ .ant-tabs-bar{
+                    margin: 0 0 30px 0;
                 }
             }
         }

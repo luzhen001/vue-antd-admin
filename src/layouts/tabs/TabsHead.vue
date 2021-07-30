@@ -174,6 +174,9 @@ export default {
                 top: 64px;
             }
         }
+        /deep/.ant-tabs-bar {
+            margin: 0 auto;
+        }
     }
     .virtual-tabs {
         height: 56px;

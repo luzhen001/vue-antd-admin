@@ -4,7 +4,7 @@
     </page-toggle-transition>
 </template>
 <script>
-import PageToggleTransition from '../components/transition/PageToggleTransition'
+import PageToggleTransition from '@/components/Transition'
 import { mapState } from 'vuex'
 export default {
     name: 'BlankView',

@@ -6,6 +6,7 @@ import '@/mock/workplace'
 import '@/mock/user/routes'
 import '@/mock/goods'
 import '@/mock/article'
+import '@/mock/form'
 // 设置全局延时
 Mock.setup({
     timeout: '200-400'

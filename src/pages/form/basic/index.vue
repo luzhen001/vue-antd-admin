@@ -7,6 +7,14 @@
             <a-form-item :label="$t('date')" :labelCol="{span: 7}" :wrapperCol="{span: 10}">
                 <a-range-picker style="width: 100%" />
             </a-form-item>
+            <a-form-item :label="$t('select')" :labelCol="{span: 7}" :wrapperCol="{span: 10}">
+                <a-select value="1" placeholder="ant-design">
+                    <a-select-option value="1">ant-design</a-select-option>
+                    <a-select-option value="2">vant</a-select-option>
+                    <a-select-option value="3">element-ui</a-select-option>
+                    <a-select-option value="4">mint-ui</a-select-option>
+                </a-select>
+            </a-form-item>
             <a-form-item :label="$t('describe')" :labelCol="{span: 7}" :wrapperCol="{span: 10}">
                 <a-textarea rows="4" :placeholder="$t('describeInput')" />
             </a-form-item>
@@ -45,7 +53,6 @@
         </a-form>
     </a-card>
 </template>
-
 <script>
 export default {
     name: 'BasicForm',
@@ -53,11 +60,6 @@ export default {
     data () {
         return {
             value: 1
-        }
-    },
-    computed: {
-        desc () {
-            return this.$t('pageDesc')
         }
     }
 }

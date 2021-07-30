@@ -5,7 +5,6 @@
         <slot></slot>
     </div>
 </template>
-
 <script>
 const Group = {
     name: 'AStepItemGroup',

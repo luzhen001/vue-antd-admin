@@ -4,19 +4,19 @@
             <a-avatar class="avatar" size="small" shape="circle" :src="user.avatar" />
             <span class="name">{{user.name}}</span>
         </div>
-        <a-menu :class="['avatar-menu']" slot="overlay">
+        <a-menu class="avatar-menu" slot="overlay">
             <a-menu-item @click="handleUserSet('/account/profile')">
-                <a-icon type="user" />
+                <a-icon type="user" class="icon_16" />
                 <span>个人中心</span>
             </a-menu-item>
             <a-menu-divider />
             <a-menu-item @click="handleUserSet('/account/setting')">
-                <a-icon type="setting" />
+                <a-icon type="setting" class="icon_16" />
                 <span>个人设置</span>
             </a-menu-item>
             <a-menu-divider />
             <a-menu-item @click="logout">
-                <a-icon style="margin-right: 8px;" type="poweroff" />
+                <a-icon type="poweroff" class="icon_16" />
                 <span>退出登录</span>
             </a-menu-item>
         </a-menu>
@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         handleUserSet(url){
-            this.$router.push(url)
+            this.$router.push(url);
         },
         logout () {
             logout()
@@ -55,6 +55,6 @@ export default {
         }
     }
     .avatar-menu {
-        width: 150px;
+        width: 118px;
     }
 </style>

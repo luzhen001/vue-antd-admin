@@ -23,7 +23,7 @@ export default {
 <style lang="less" scoped>
     .ant-back-top {
         bottom: 40px;
-        right: 12px;
+        right: 10px;
         .back_btn {
             width: 40px;
             height: 40px;

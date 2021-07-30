@@ -8,13 +8,10 @@
         </div>
     </div>
 </template>
-
 <script>
 import { format } from 'date-fns'
-
 const data = []
 const beginDay = new Date().getTime()
-
 const fakeY = [7, 5, 4, 2, 4, 7, 5, 6, 5, 9, 6, 3, 1, 5, 3, 6, 5]
 for (let i = 0; i < fakeY.length; i += 1) {
     data.push({
@@ -22,7 +19,6 @@ for (let i = 0; i < fakeY.length; i += 1) {
         y: fakeY[i]
     })
 }
-
 const tooltip = [
     'x*y',
     (x, y) => ({
@@ -30,7 +26,6 @@ const tooltip = [
         value: y
     })
 ]
-
 const scale = [{
     dataKey: 'x',
     min: 2
@@ -40,7 +35,6 @@ const scale = [{
     min: 1,
     max: 22
 }]
-
 export default {
     name: 'MiniArea',
     data () {

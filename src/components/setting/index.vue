@@ -1,20 +1,23 @@
 <template>
-    <div class="side-setting">
-        <setting-item :title="$t('theme.title')" class="set_item">
+    <div class="side_setting">
+        <div class="set_item">
+            <h3>{{$t('theme.title')}}</h3>
             <img-checkbox-group @change="values => setTheme({...theme, mode: values[0]})" :default-values="[theme.mode]">
                 <img-checkbox :title="$t('theme.dark')" :img="darkStyle" value="dark" />
                 <img-checkbox :title="$t('theme.light')" :img="lightStyle" value="light" />
                 <img-checkbox :title="$t('theme.night')" :img="nightStyle" value="night" />
             </img-checkbox-group>
-        </setting-item>
+        </div>
         <a-divider />
-        <setting-item :title="$t('theme.color')" class="set_item">
+        <div class="set_item">
+            <h3>{{$t('theme.color')}}</h3>
             <color-checkbox-group @change="(values, colors) => setTheme({...theme, color: colors[0]})" :defaultValues="[palettes.indexOf(theme.color)]" :multiple="false">
                 <color-checkbox v-for="(color, index) in palettes" :key="index" :color="color" :value="index" />
             </color-checkbox-group>
-        </setting-item>
+        </div>
         <a-divider />
-        <setting-item :title="$t('navigate.layout')">
+        <div>
+            <h3>{{$t('navigate.layout')}}</h3>
             <a-list :split="false">
                 <a-list-item>
                     {{$t('navigate.content.title')}}
@@ -40,9 +43,10 @@
                     <a-switch :checked="multiPage" slot="actions" @change="setMultiPage" />
                 </a-list-item>
             </a-list>
-        </setting-item>
+        </div>
         <a-divider />
-        <setting-item :title="$t('animate.title')">
+        <div>
+            <h3>{{$t('animate.title')}}</h3>
             <a-list :split="false">
                 <a-list-item>
                     {{$t('animate.disable')}}
@@ -61,24 +65,24 @@
                     </a-select>
                 </a-list-item>
             </a-list>
-        </setting-item>
+        </div>
         <a-divider />
-        <setting-item :title="$t('other.title')">
+        <div class="set_item">
+            <h3>{{$t('other.title')}}</h3>
             <a-list :split="false">
                 <a-list-item>
                     {{$t('other.weekMode')}}
                     <a-switch :checked="weekMode" slot="actions" @change="setWeekMode" />
                 </a-list-item>
             </a-list>
-        </setting-item>
-        <setting-item class="set_item">
+        </div>
+        <div class="set_item">
             <a-button @click="saveSetting" type="primary" icon="save">{{$t('save')}}</a-button>
             <a-button @click="resetSetting" type="dashed" icon="redo" style="float: right">{{$t('reset')}}</a-button>
-        </setting-item>
+        </div>
     </div>
 </template>
 <script>
-import SettingItem from './SettingItem'
 import { ColorCheckbox, ImgCheckbox } from '@/components/checkbox'
 import { mapState, mapMutations } from 'vuex'
 import { setting } from '@/config/default'
@@ -91,7 +95,7 @@ const ImgCheckboxGroup = ImgCheckbox.Group
 export default {
     name: 'Setting',
     i18n: require('./i18n'),
-    components: { ImgCheckboxGroup, ImgCheckbox, ColorCheckboxGroup, ColorCheckbox, SettingItem },
+    components: { ImgCheckboxGroup, ImgCheckbox, ColorCheckboxGroup, ColorCheckbox },
     data () {
         return {
             darkStyle,
@@ -181,14 +185,20 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-    .side-setting {
-        min-height: 100%;
+    .side_setting {
         padding: 24px;
         font-size: 14px;
+        min-height: 100%;
         word-wrap: break-word;
         background-color: @base-bg-color;
         .set_item{
             padding: 0 0 10px;
+            h3{
+                font-size: 17px;
+                color: @title-color;
+                line-height: 22px;
+                margin-bottom: 10px;
+            }
         }
         .select-item {
             width: 80px;

@@ -4,14 +4,14 @@ function clipboardSuccess () {
     Vue.prototype.$message.destroy();
     Vue.prototype.$message.success({
         content: '复制成功！',
-        duration: 1000
+        duration: 1
     });
 }
 function clipboardError () {
     Vue.prototype.$message.destroy();
     Vue.prototype.$message.error({
         content: '复制失败，请稍后再试！',
-        duration: 1000
+        duration: 1
     });
 }
 export default function handleClipboard (text, event) {

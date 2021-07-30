@@ -4,24 +4,24 @@ import BlankView from '@/layouts/BlankView'
 const options = {
     routes: [
         {
-            name: '登录页',
+            name: '登录',
             path: '/login',
             component: () => import('@/pages/login')
         },
         {
             name:'忘记密码',
-            path:'/forgetPwd',
+            path:'/forgetpwd',
             component:()=> import('@/pages/forgetPwd')
-        },
-        {
-            name: '404',
-            path: '*',
-            component: () => import('@/pages/error/404'),
         },
         {
             name: '403',
             path: '/403',
             component: () => import('@/pages/error/403'),
+        },
+        {
+            name: '404',
+            path: '*',
+            component: () => import('@/pages/error/404'),
         },
         {
             name: '首页',
@@ -32,10 +32,10 @@ const options = {
                 {
                     name: '仪表盘',
                     path: 'dashboard',
+                    component: BlankView,
                     meta: {
                         icon: 'dashboard'
                     },
-                    component: BlankView,
                     children: [
                         {
                             name: '工作台',
@@ -55,15 +55,40 @@ const options = {
                     ]
                 },
                 {
+                    name:'图表',
+                    path:'echarts',
+                    component: BlankView,
+                    meta:{
+                        icon:'bar-chart'
+                    },
+                    children:[
+                        {
+                            name:'折线图',
+                            path:'line',
+                            component:()=>import('@/pages/echarts/line')
+                        },
+                        {
+                            name:'柱状图',
+                            path:'bar',
+                            component:()=>import('@/pages/echarts/bar')
+                        },
+                        {
+                            name:'雷达图',
+                            path:'randar',
+                            component:()=>import('@/pages/echarts/randar')
+                        }
+                    ]
+                },
+                {
                     name: '表单页',
                     path: 'form',
+                    component: BlankView,
                     meta: {
                         icon: 'form',
                         page: {
                             cacheAble: false
                         }
                     },
-                    component: BlankView,
                     children: [
                         {
                             name: '基础表单',
@@ -85,10 +110,10 @@ const options = {
                 {
                     path: 'list',
                     name: '列表页',
+                    component: BlankView,
                     meta: {
                         icon: 'table'
                     },
-                    component: BlankView,
                     children: [
                         {
                             path: 'query',
@@ -118,6 +143,11 @@ const options = {
                             component: () => import('@/pages/list/CardList'),
                         },
                         {
+                            name: '高级表格',
+                            path: 'table',
+                            component: () => import('@/pages/list/table')
+                        },
+                        {
                             path: 'search',
                             name: '搜索列表',
                             component: () => import('@/pages/list/search/SearchLayout'),
@@ -144,50 +174,55 @@ const options = {
                 {
                     name: '详情页',
                     path: 'details',
+                    component: BlankView,
                     meta: {
                         icon: 'profile'
                     },
-                    component: BlankView,
                     children: [
                         {
                             name: '基础详情页',
                             path: 'basic',
-                            component: () => import('@/pages/detail/BasicDetail')
+                            component: () => import('@/pages/detail/basic')
                         },
                         {
                             name: '高级详情页',
                             path: 'advance',
-                            component: () => import('@/pages/detail/AdvancedDetail')
+                            component: () => import('@/pages/detail/advance')
                         }
                     ]
                 },
                 {
                     name: '结果页',
                     path: 'result',
+                    component: BlankView,
                     meta: {
                         icon: 'check-circle-o',
                     },
-                    component: BlankView,
                     children: [
                         {
-                            name: '成功',
-                            path: 'success',
-                            component: () => import('@/pages/result/Success')
+                            name: '警告',
+                            path: 'warning',
+                            component: () => import('@/pages/result/warning')
                         },
                         {
                             name: '失败',
                             path: 'error',
-                            component: () => import('@/pages/result/Error')
+                            component: () => import('@/pages/result/error')
+                        },
+                        {
+                            name: '成功',
+                            path: 'success',
+                            component: () => import('@/pages/result/success')
                         }
                     ]
                 },
                 {
                     name: '异常页',
                     path: 'error',
+                    component: BlankView,
                     meta: {
                         icon: 'warning',
                     },
-                    component: BlankView,
                     children: [
                         {
                             name: 'Exp404',
@@ -209,10 +244,10 @@ const options = {
                 {
                     name: '内置组件',
                     path: 'components',
+                    component: BlankView,
                     meta: {
                         icon: 'appstore-o'
                     },
-                    component: BlankView,
                     children: [
                         {
                             name:'返回顶部',
@@ -228,21 +263,16 @@ const options = {
                             name: '任务卡片',
                             path: 'taskCard',
                             component: () => import('@/pages/components/TaskCard')
-                        },
-                        {
-                            name: '高级表格',
-                            path: 'table',
-                            component: () => import('@/pages/components/table')
                         }
                     ]
                 },
                 {
                     name:'个人中心',
                     path:'account',
+                    component: BlankView,
                     meta: {
                         icon: 'user-o'
                     },
-                    component: BlankView,
                     children:[
                         {
                             name:'个人中心',
@@ -259,6 +289,7 @@ const options = {
                 {
                     name: '带参菜单',
                     path: 'menuquery',
+                    component: () => import('@/pages/menuQuery'),
                     meta: {
                         icon: 'project',
                         query: {
@@ -266,19 +297,18 @@ const options = {
                             age:18,
                             uid:'123456789'
                         }
-                    },
-                    component: () => import('@/pages/menuQuery')
+                    }
                 },
                 {
                     name: '动态路由菜单',
                     path: 'menudynamic/:id',
+                    component: () => import('@/pages/menuDynamic'),
                     meta: {
                         icon: 'project',
                         params: {
                             id: 123
                         }
-                    },
-                    component: () => import('@/pages/menuDynamic')
+                    }
                 }
             ]
         }

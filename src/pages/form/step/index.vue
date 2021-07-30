@@ -25,24 +25,19 @@ export default {
             current: 0
         }
     },
-    computed: {
-        desc () {
-            return this.$t('pageDesc')
-        }
-    },
     methods: {
         nextStep () {
             if (this.current < 2) {
-                this.current += 1
+                this.current += 1;
             }
         },
         prevStep () {
             if (this.current > 0) {
-                this.current -= 1
+                this.current -= 1;
             }
         },
         finish () {
-            this.current = 0
+            this.current = 0;
         }
     }
 }

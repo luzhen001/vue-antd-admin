@@ -66,7 +66,6 @@ export default {
         padding: 0 12px;
         position: relative;
         box-shadow: @shadow-down;
-        background: @base-bg-color;
         .head-menu {
             height: 64px;
             box-shadow: none;
@@ -75,7 +74,6 @@ export default {
         }
         &.dark {
             color: @menu-dark-highlight-color;
-            background-color: @layout-trigger-background;
         }
         &.light {
             color: #666;
@@ -147,7 +145,6 @@ export default {
                     display: flex;
                     align-items: center;
                 }
-                
                 each(@theme-list, {
                         &.@{value} .header-item {
                             &:hover {

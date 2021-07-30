@@ -24,7 +24,7 @@
 <script>
 import AdvanceTable from '@/components/table/advance/AdvanceTable'
 import { dataSource as ds } from '@/services'
-import Api from '@/pages/components/table/Api'
+import Api from './Api'
 export default {
     name: 'Table',
     components: { Api, AdvanceTable },
@@ -141,7 +141,7 @@ export default {
     }
 }
 </script>
-<style scoped lang="less">
+<style lang="less" scoped>
     .table {
         background-color: @base-bg-color;
         padding: 24px;
