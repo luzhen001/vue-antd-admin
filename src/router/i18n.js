@@ -59,6 +59,16 @@ module.exports = {
                 profile: { name: '個人中心' },
                 setting: { name: '個人設置' }
             },
+            excel:{
+                name:'EXCEL相關',
+                exportexcel:{name:'匯出表格'},
+                exportselected:{name:'匯出已選項'},
+                exporexportmergetexcel:{name:'匯出多級表頭'},
+                uploadexcel:{name:'上傳EXCEL'}
+            },
+            zip:{
+                name:'ZIP相關'
+            },
             menuquery:{
                 name:'帶參菜單'
             },

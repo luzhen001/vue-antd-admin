@@ -256,12 +256,12 @@ const options = {
                         },
                         {
                             name:'复制',
-                            path:'copyBoard',
+                            path:'copyboard',
                             component:()=>import('@/pages/components/copyBoard')
                         },
                         {
                             name: '任务卡片',
-                            path: 'taskCard',
+                            path: 'taskcard',
                             component: () => import('@/pages/components/TaskCard')
                         }
                     ]
@@ -285,6 +285,44 @@ const options = {
                             component:()=>import('@/pages/account/setting')
                         }
                     ]
+                },
+                {
+                    name:'Excel相关',
+                    path:'excel',
+                    component: BlankView,
+                    meta: {
+                        icon: 'file-excel'
+                    },
+                    children:[
+                        {
+                            name:'导出表格',
+                            path:'exportexcel',
+                            components:()=>import('@/pages/excel/exportexcel')
+                        },
+                        {
+                            name:'导出已选项',
+                            path:'exportselected',
+                            components:()=>import('@/pages/excel/exportselected')
+                        },
+                        {
+                            name:'导出多级表头',
+                            path:'exportmerge',
+                            components:()=>import('@/pages/excel/exportmerge')
+                        },
+                        {
+                            name:'上传Excel',
+                            path:'uploadexcel',
+                            components:()=>import('@/pages/excel/uploadexcel')
+                        }
+                    ]
+                },
+                {
+                    name:'Zip相关',
+                    path:'zip',
+                    component:()=>import('@/pages/zip'),
+                    meta:{
+                        icon:'file-zip'
+                    }
                 },
                 {
                     name: '带参菜单',
