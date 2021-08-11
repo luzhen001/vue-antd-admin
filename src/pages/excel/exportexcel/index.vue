@@ -1,5 +1,7 @@
 <template>
-    <div></div>
+    <div>
+        <h3>导出</h3>
+    </div>
 </template>
 <script>
 export default {
@@ -20,6 +22,6 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style lang="less" scoped>
 
 </style>

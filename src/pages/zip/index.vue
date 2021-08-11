@@ -1,16 +1,14 @@
 <template>
+<div>
+<a-form layout="horizontal">
+                    <a-form-item label="文件名称:">
+                        <a-input placeholder="请输入姓名" />
+                    </a-form-item>
+                </a-form>
     <a-card>
-        <a-row type="flex" justify="start" align="middle" :gutter="16">
-            <a-col >文件名称:</a-col>
-            <a-col :span="7">
-                <a-input size="large" v-model="filename" placeholder="请输入文件名称(默认为当前时间)">
-                    <a-icon slot="prefix" type="file-zip" />
-                </a-input>
-            </a-col>
-            <a-col >
-                <a-button type="primary" size="large" @click="handleExportZip">导出ZIP</a-button>
-            </a-col>
-        </a-row>
+            <!-- <a-col >
+                <a-button type="primary" @click="handleExportZip">导出ZIP</a-button>
+            </a-col> -->
         <a-space direction="vertical" style="width:100%">
             <a-table :columns="columns" :data-source="zipList" :bordered="true" :pagination="false">
                 <template slot="imgurl" slot-scope="imgurl">
@@ -32,6 +30,7 @@
             </a-table>
         </a-space>
     </a-card>
+    </div>
 </template>
 <script>
 import { request } from '@/utils/request'

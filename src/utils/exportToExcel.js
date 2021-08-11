@@ -1,6 +1,6 @@
 import XLSX from 'xlsx'
 import { saveAs } from 'file-saver'
-import { parseTime } from 'utils/index'
+import { parseTime } from './util'
 function generateArray (table) {
     var out = [];
     var rows = table.querySelectorAll('tr');

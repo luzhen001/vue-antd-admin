@@ -2,19 +2,19 @@
     <div class="page-header-index-wide">
         <a-card :bordered="false" :bodyStyle="{ padding: '16px 0', height: '100%' }" :style="{ height: '100%' }">
             <a-tabs default-active-key="1" tab-position="left" size="default">
-                <a-tab-pane key="1" tab="基本设置">
+                <a-tab-pane key="1" :tab="$t('basic.basicSet')">
                     <basic-setting />
                 </a-tab-pane>
-                <a-tab-pane key="2" tab="安全设置">
+                <a-tab-pane key="2" :tab="$t('safe.safeSet')">
                     <safe-setting />
                 </a-tab-pane>
-                <a-tab-pane key="3" tab="个性化">
+                <a-tab-pane key="3" :tab="$t('custome.customeSet')">
                     <custom-setting />
                 </a-tab-pane>
-                <a-tab-pane key="4" tab="账号绑定">
+                <a-tab-pane key="4" :tab="$t('account.accountBind')">
                     <binding />
                 </a-tab-pane>
-                <a-tab-pane key="5" tab="消息通知">
+                <a-tab-pane key="5" :tab="$t('message.notification')">
                     <notification />
                 </a-tab-pane>
             </a-tabs>
@@ -29,6 +29,7 @@ import Binding from './Binding'
 import Notification from './Notification'
 export default {
     components: { BasicSetting,SafeSetting,CustomSetting,Binding,Notification},
+    i18n: require('./i18n'),
     data () {
           return {
             mode: 'inline',

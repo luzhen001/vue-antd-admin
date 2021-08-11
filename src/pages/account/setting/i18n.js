@@ -1,0 +1,79 @@
+module.exports = {
+    messages: {
+        CN:{
+            basic:{
+                basicSet:'基本设置',
+                name:'姓名',
+                nickName:'昵称',
+                mobile:'手机',
+                email:'邮箱',
+                sex:'性别',
+                address:'地址',
+                introduction:'简介',
+                update:'更新'
+            },
+            safe:{
+                safeSet:'安全设置'
+            },
+            custome:{
+                customeSet:'个性化'
+            },
+            account:{
+                accountBind:'账号绑定'
+            },
+            message:{
+                notification:'消息通知'
+            }
+        },
+        HK:{
+            basic:{
+                basicSet:'基本設定',
+                name:'姓名',
+                nickName:'昵稱',
+                mobile:'手機',
+                email:'郵箱',
+                sex:'性别',
+                address:'地址',
+                introduction:'簡介',
+                update:'更新'
+            },
+            safe:{
+                safeSet:'安全設置'
+            },
+            custome:{
+                customeSet:'個性化'
+            },
+            account:{
+                accountBind:'帳號綁定'
+            },
+            message:{
+                notification:'消息通知'
+            }
+        },
+        US:{
+            basic:{
+                basicSet:'basic set',
+                name:'name',
+                nickName:'nicknime',
+                mobile:'mobile',
+                email:'email',
+                sex:'sex',
+                address:'address',
+                introduction:'introduction',
+                update:'update'
+            },
+            safe:{
+                safeSet:'safe set'
+            },
+            custome:{
+                customeSet:'custome set'
+            },
+            account:{
+                accountBind:'account bind'
+            },
+            message:{
+                notification:'message notification'
+            }
+        }
+    }
+}
